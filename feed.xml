@@ -1,33 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
-  <title>Nishi Kanta Paul</title>
-  <subtitle>AI | Computer Vision | Medical Imaging | Research & Software Development</subtitle>
-  <id>https://Nishi-Kanta-Paul.github.io/</id>
-  <updated>2025-07-02T00:00:00Z</updated>
+  <generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator>
+  <link href="https://Nishi-Kanta-Paul.github.io/feed.xml" rel="self" type="application/atom+xml" />
+  <link href="https://Nishi-Kanta-Paul.github.io/" rel="alternate" type="text/html" hreflang="en" />
+  <updated>2025-07-02T08:38:00+06:00</updated>
+  <id>https://Nishi-Kanta-Paul.github.io/feed.xml</id>
+  <title type="html">Nishi Kanta Paul's Portfolio</title>
+  <subtitle>Passionate about AI, healthcare, CV, and full-stack engineering. Sharing impactful projects, research, and career insights.</subtitle>
   <author>
     <name>Nishi Kanta Paul</name>
-    <email>nishikantapaul108@gmail.com</email>
   </author>
   <entry>
-    <title>About Me</title>
-    <id>https://Nishi-Kanta-Paul.github.io#about</id>
-    <updated>2025-07-02T00:00:00Z</updated>
-    <content type="html">
-      <![CDATA[
-        <p>Hello! I’m Nishi Kanta Paul, a Computer Science graduate from Ahsanullah University of Science and Technology (Top 7 in class).</p>
-        <p>I’m passionate about AI, computer vision, and medical imaging. I currently contribute to an AI-based Parkinson’s Disease Screening project with researchers from UAB and Temple University.</p>
-        <p>3000+ problems solved on Codeforces, LeetCode, and CodeChef have helped me strengthen my algorithmic thinking.</p>
-        <p>I work as a Trainee Software Engineer at Brain Station 23 PLC, building scalable web apps using React, TypeScript, and Next.js.</p>
-        <p>My work on driver distraction detection using transfer learning was published in an international conference.</p>
-        <p>I’m now actively seeking fully funded research opportunities in:</p>
-        <ul>
-          <li>AI for healthcare and diagnostics</li>
-          <li>Deep learning and computer vision</li>
-          <li>Algorithm design & optimization</li>
-          <li>Modern frontend engineering (React/Next.js)</li>
-        </ul>
-        <p>Always open to collaborations—feel free to reach out!</p>
-      ]]>
-    </content>
+    <title type="html">Welcome to My Portfolio</title>
+    <id>https://Nishi-Kanta-Paul.github.io/entries/2025-07-02-welcome</id>
+    <updated>2025-07-02T08:38:00+06:00</updated>
+    <published>2025-07-02T08:38:00+06:00</published>
+    <link href="https://Nishi-Kanta-Paul.github.io/" rel="alternate" type="text/html" />
+    <author>
+      <name>Nishi Kanta Paul</name>
+    </author>
+    <summary type="html"><![CDATA[I share my journey through AI, computer vision, healthcare research, and full-stack development. Dive into my projects, papers, and coding journey.]]></summary>
+    <content type="html"><![CDATA[
+      <h2>Welcome to My Portfolio</h2>
+      <p>Hi, I’m Nishi Kanta Paul, and this space showcases my work—from real-time AI research to software engineering projects. I’ve contributed to healthcare research (e.g., Parkinson's diagnosis), published in IEEE conferences, and solved 3000+ algorithmic problems.</p>
+      <p>You’ll find my <a href="https://github.com/Nishi-Kanta-Paul">projects on GitHub</a>, covering topics like driver distraction detection, misinformation detection, encrypted diaries, and React/Node apps.</p>
+      <hr />
+      <p>A little about me: I enjoy watching CID, love football and basketball, and follow UFC MMA passionately. 😏</p>
+      <h4 id="a-small-bucket-list-will-grow-in-the-future">A Small Bucket List (Will grow in the future)</h4>
+      <ul>
+        <li>Attend a live UFC match</li>
+        <li>Visit the 7 wonders of the world</li>
+      </ul>
+      <p>Also, has anyone actually worn a hoodie and felt warm? Not me.</p>
+      <hr />
+      <p>Here’s a quote that inspires me:</p>
+      <blockquote>
+        <p>“If you love it, you’ll teach yourself. If you don’t love it, others will teach you”</p>
+        <p>— Yukitaka Yamaguchi</p>
+      </blockquote>
+      <p>Thanks for stopping by!</p>
+      <p>Best,<br />Nishi Kanta Paul</p>
+    ]]></content>
   </entry>
 </feed>
