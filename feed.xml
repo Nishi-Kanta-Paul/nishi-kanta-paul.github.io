@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+  <title>Nishi Kanta Paul</title>
+  <subtitle>AI | Computer Vision | Medical Imaging | Research & Software Development</subtitle>
+  <id>https://Nishi-Kanta-Paul.github.io/</id>
+  <updated>2025-07-02T00:00:00Z</updated>
+  <author>
+    <name>Nishi Kanta Paul</name>
+    <email>nishikantapaul108@gmail.com</email>
+  </author>
+  <entry>
+    <title>About Me</title>
+    <id>https://Nishi-Kanta-Paul.github.io#about</id>
+    <updated>2025-07-02T00:00:00Z</updated>
+    <content type="html">
+      <![CDATA[
+        <p>Hello! I’m Nishi Kanta Paul, a Computer Science graduate from Ahsanullah University of Science and Technology (Top 7 in class).</p>
+        <p>I’m passionate about AI, computer vision, and medical imaging. I currently contribute to an AI-based Parkinson’s Disease Screening project with researchers from UAB and Temple University.</p>
+        <p>3000+ problems solved on Codeforces, LeetCode, and CodeChef have helped me strengthen my algorithmic thinking.</p>
+        <p>I work as a Trainee Software Engineer at Brain Station 23 PLC, building scalable web apps using React, TypeScript, and Next.js.</p>
+        <p>My work on driver distraction detection using transfer learning was published in an international conference.</p>
+        <p>I’m now actively seeking fully funded research opportunities in:</p>
+        <ul>
+          <li>AI for healthcare and diagnostics</li>
+          <li>Deep learning and computer vision</li>
+          <li>Algorithm design & optimization</li>
+          <li>Modern frontend engineering (React/Next.js)</li>
+        </ul>
+        <p>Always open to collaborations—feel free to reach out!</p>
+      ]]>
+    </content>
+  </entry>
+</feed>

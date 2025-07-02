@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://Nishi-Kanta-Paul.github.io/sitemap.xml
