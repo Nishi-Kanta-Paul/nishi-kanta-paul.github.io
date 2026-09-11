@@ -71,6 +71,38 @@
     />
 
     <link rel="stylesheet" href="/assets/css/main.css" />
+
+    <style>
+      :root {
+        --pc-card: #f8f9fb; --pc-border: rgba(0,0,0,.16);
+        --pc-text: #16181d; --pc-muted: #4b5159; --pc-faint: #5f666f;
+      }
+      html[data-theme="dark"] {
+        --pc-card: #1b2026; --pc-border: #3b4149;
+        --pc-text: #edeff2; --pc-muted: #c3cad3; --pc-faint: #a9b1bb;
+      }
+      .selpub { margin-top: .9rem; }
+      .selpub-item { padding: .85rem 1rem; margin-bottom: .6rem; background: var(--pc-card);
+                     border: 1px solid var(--pc-border); border-left: 3px solid var(--global-theme-color);
+                     border-radius: .4rem; }
+      .selpub-badge { font-size: .64rem; font-weight: 700; text-transform: uppercase; letter-spacing: .05em;
+                      padding: .14rem .45rem; border-radius: .25rem; display: inline-block; margin-bottom: .3rem; }
+      .sb-pub, .sb-acc { background: rgba(6,118,71,.12); color: #056b40; }
+      .sb-rev { background: rgba(30,90,168,.12); color: #1b5299; }
+      html[data-theme="dark"] .sb-pub, html[data-theme="dark"] .sb-acc { background: rgba(52,211,153,.16); color: #45dda6; }
+      html[data-theme="dark"] .sb-rev { background: rgba(96,165,250,.18); color: #7cb3fb; }
+      .selpub-title { font-weight: 700; font-size: .93rem; line-height: 1.4; color: var(--pc-text);
+                      text-decoration: none; display: block; }
+      a.selpub-title:hover { color: var(--global-theme-color); text-decoration: none; }
+      .selpub-venue { font-size: .8rem; color: var(--pc-muted); margin: .28rem 0 0; }
+      .selpub-result { font-size: .8rem; color: var(--pc-muted); margin: .3rem 0 0; }
+      .selpub-result b { color: var(--pc-text); font-weight: 700; }
+      .selpub-all { font-size: .85rem; font-weight: 600; }
+      /* Bootstrap's .text-dark pinned these to #343a40, which is unreadable in dark mode;
+         the companion `dark:text-white` is Tailwind syntax and has no effect here. */
+      .news-cell { color: var(--global-text-color); }
+    </style>
+
     <link rel="canonical" href="https://Nishi-Kanta-Paul.github.io/" />
 
     <!-- Dark Mode -->
@@ -299,20 +331,20 @@
           <div class="table-responsive news">
             <table class="table table-sm table-borderless">
               <tr>
-                <th scope="row" class="text-dark dark:text-white">
+                <th scope="row" class="news-cell">
                   June 2026
                 </th>
-                <td class="text-dark dark:text-white">
+                <td class="news-cell">
                   Joined <b>Washington State University</b> as a
                   <b>Research Assistant</b> on <b>Anomaly-Aware ForensiBlock</b>,
                   supervised by Prof. Asma Jodeiri Akbarfam.
                 </td>
               </tr>
               <tr>
-                <th scope="row" class="text-dark dark:text-white">
+                <th scope="row" class="news-cell">
                   April 2026
                 </th>
-                <td class="text-dark dark:text-white">
+                <td class="news-cell">
                   Founded
                   <a href="https://nimishes-lab.vercel.app/" target="_blank"
                     ><b>NIMISHES Lab</b></a
@@ -322,54 +354,39 @@
                 </td>
               </tr>
               <tr>
-                <th scope="row" class="text-dark dark:text-white">
+                <th scope="row" class="news-cell">
                   March 2026
                 </th>
-                <td class="text-dark dark:text-white">
+                <td class="news-cell">
                   Joined <b>Elite Research Lab</b> as a
                   <b>Junior Research Assistant</b>, first author on
                   <b>BGD-SF PolySegNet</b> (boundary-guided polyp segmentation).
                 </td>
               </tr>
               <tr>
-                <th scope="row" class="text-dark dark:text-white">
-                  2026 – Present
-                </th>
-                <td class="text-dark dark:text-white">
-                  3 conference papers <b>accepted</b> (<b>IEEE BECITHCON
-                  2026</b> &times; 2, <b>iCONEECT 2026</b>) and 2
-                  <b>under review</b> at <b>IEEE ICCIT 2026</b>; 4
-                  manuscripts in preparation on semi-supervised polyp
-                  segmentation (<b>CoMAF-Polyp</b>, with Medical University of
-                  Vienna), polyp segmentation (BGD-SF PolySegNet), skin lesion
-                  segmentation (LCM-UNet), and Anomaly-Aware ForensiBlock
-                  (Washington State University).
-                </td>
-              </tr>
-              <tr>
-                <th scope="row" class="text-dark dark:text-white">
+                <th scope="row" class="news-cell">
                   January 2026
                 </th>
-                <td class="text-dark dark:text-white">
+                <td class="news-cell">
                   Started as
                   <b>Adjunct Lecturer at International Standard University</b>.
                 </td>
               </tr>
               <tr>
-                <th scope="row" class="text-dark dark:text-white">
+                <th scope="row" class="news-cell">
                   December 2025
                 </th>
-                <td class="text-dark dark:text-white">
+                <td class="news-cell">
                   Joined <b>Elite Research Lab</b> as a
                   <b>Research Intern</b> for the
                   <b>MedVQA-X (Medical Multimodal AI)</b> project.
                 </td>
               </tr>
               <tr>
-                <th scope="row" class="text-dark dark:text-white">
+                <th scope="row" class="news-cell">
                   June 28, 2025
                 </th>
-                <td class="text-dark dark:text-white">
+                <td class="news-cell">
                   Completed
                   <a
                     href="https://github.com/Nishi-Kanta-Paul/NeuroSight-AI-Powered-Brain-Tumor-Detection"
@@ -379,10 +396,10 @@
                 </td>
               </tr>
               <tr>
-                <th scope="row" class="text-dark dark:text-white">
+                <th scope="row" class="news-cell">
                   May 18, 2025
                 </th>
-                <td class="text-dark dark:text-white">
+                <td class="news-cell">
                   Joined
                   <a href="https://brainstation-23.com/" target="_blank"
                     ><b>Brain Station 23 PLC</b></a
@@ -390,23 +407,42 @@
                   as a Software Engineer-I.
                 </td>
               </tr>
-              <tr>
-                <th scope="row" class="text-dark dark:text-white">
-                  February 10, 2024
-                </th>
-                <td class="text-dark dark:text-white">
-                  Published:
-                  <a
-                    href="https://ieeexplore.ieee.org/document/10499531"
-                    target="_blank"
-                    ><b
-                      >Driver Distraction Detection using Transfer Learning</b
-                    ></a
-                  >.
-                </td>
-              </tr>
             </table>
           </div>
+
+          <!-- Selected Publications -->
+          <h4 class="mt-5">
+            Selected Publications <span role="img" aria-label="page">📄</span>
+          </h4>
+          <div class="selpub">
+            <div class="selpub-item">
+              <span class="selpub-badge sb-pub">Published</span>
+              <a class="selpub-title" href="https://ieeexplore.ieee.org/document/10499531" target="_blank" rel="noopener">Video-based Driver Distraction Detection using Transfer Learning: Bangladesh Perspective</a>
+              <p class="selpub-venue"><em>IEEE iCACCESS</em>, 2024 &middot; IEEE Xplore</p>
+              <p class="selpub-result">Transfer-learning driver distraction recognition evaluated on Bangladeshi road conditions.</p>
+            </div>
+            <div class="selpub-item">
+              <span class="selpub-badge sb-acc">Accepted</span>
+              <a class="selpub-title" href="https://nimishes-lab.vercel.app/papers/SleepEffFormer.pdf" target="_blank" rel="noopener">SleepEffFormer: Efficient CNN-Transformer with Transition-Aware Smoothing for Single-Channel EEG Sleep Stage Classification</a>
+              <p class="selpub-venue"><em>IEEE BECITHCON</em>, 2026 &middot; first author</p>
+              <p class="selpub-result"><b>83.9%</b> accuracy and <b>78.9%</b> macro-F1 on Sleep-EDF Expanded with <b>3&ndash;5&times; fewer parameters</b> than comparable models.</p>
+            </div>
+            <div class="selpub-item">
+              <span class="selpub-badge sb-acc">Accepted</span>
+              <a class="selpub-title" href="https://nimishes-lab.vercel.app/papers/DR-LiteNet.pdf" target="_blank" rel="noopener">DR-LiteNet: A Lightweight Explainable Hybrid CNN Framework for Imbalanced Diabetic Retinopathy Grading</a>
+              <p class="selpub-venue"><em>iCONEECT</em>, 2026 &middot; first author</p>
+              <p class="selpub-result"><b>QWK 0.884</b> on APTOS 2019 with <b>4.69M parameters</b>, outperforming ResNet50 at a fifth of the size.</p>
+            </div>
+            <div class="selpub-item">
+              <span class="selpub-badge sb-rev">Under Review</span>
+              <a class="selpub-title" href="https://nimishes-lab.vercel.app/papers/AWEF-Net.pdf" target="_blank" rel="noopener">AWEF-Net: An Attention-Weighted Ensemble Fusion Framework for Multi-Class Pulmonary Disease Classification</a>
+              <p class="selpub-venue"><em>IEEE ICCIT</em>, 2026 &middot; first author</p>
+              <p class="selpub-result"><b>96.3%</b> macro-F1 and <b>97.1%</b> COVID-19 recall across 21,165 chest radiographs.</p>
+            </div>
+          </div>
+          <p class="mt-3 mb-0">
+            <a class="selpub-all" href="/publication/">View all 9 publications &rarr;</a>
+          </p>
         </div>
       </div>
     </div>
