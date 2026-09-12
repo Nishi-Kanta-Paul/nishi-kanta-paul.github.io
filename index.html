@@ -75,11 +75,11 @@
     <style>
       :root {
         --pc-card: #f8f9fb; --pc-border: rgba(0,0,0,.16);
-        --pc-text: #16181d; --pc-muted: #4b5159; --pc-faint: #5f666f;
+        --pc-text: #16181d; --pc-muted: #2e343e; --pc-faint: #434b57;
       }
       html[data-theme="dark"] {
         --pc-card: #1b2026; --pc-border: #3b4149;
-        --pc-text: #edeff2; --pc-muted: #c3cad3; --pc-faint: #a9b1bb;
+        --pc-text: #edeff2; --pc-muted: #d3dae2; --pc-faint: #bcc4ce;
       }
       .selpub { margin-top: .9rem; }
       .selpub-item { padding: .85rem 1rem; margin-bottom: .6rem; background: var(--pc-card);
@@ -91,12 +91,24 @@
       .sb-rev { background: rgba(30,90,168,.12); color: #1b5299; }
       html[data-theme="dark"] .sb-pub, html[data-theme="dark"] .sb-acc { background: rgba(52,211,153,.16); color: #45dda6; }
       html[data-theme="dark"] .sb-rev { background: rgba(96,165,250,.18); color: #7cb3fb; }
-      .selpub-title { font-weight: 700; font-size: .93rem; line-height: 1.4; color: var(--pc-text);
+      .selpub-title { font-weight: 700; font-size: .97rem; line-height: 1.4; color: var(--pc-text);
                       text-decoration: none; display: block; }
       a.selpub-title:hover { color: var(--global-theme-color); text-decoration: none; }
-      .selpub-venue { font-size: .8rem; color: var(--pc-muted); margin: .28rem 0 0; }
-      .selpub-result { font-size: .8rem; color: var(--pc-muted); margin: .3rem 0 0; }
+      .selpub-venue { font-size: .875rem; color: var(--pc-muted); margin: .28rem 0 0; }
+      .selpub-result { font-size: .875rem; color: var(--pc-muted); margin: .3rem 0 0; }
       .selpub-result b { color: var(--pc-text); font-weight: 700; }
+      :root { --pc-hover-shadow: 0 12px 28px -14px rgba(28, 38, 56, .30), 0 3px 8px -4px rgba(28, 38, 56, .12); }
+      html[data-theme="dark"] { --pc-hover-shadow: 0 12px 30px -14px rgba(38, 152, 186, .40), 0 0 0 1px rgba(38, 152, 186, .16); }
+      .selpub-item { transition: transform .2s ease-out, box-shadow .2s ease-out, border-color .2s ease-out; }
+      .selpub-item:hover {
+        transform: translateY(-3px);
+        box-shadow: var(--pc-hover-shadow);
+        border-color: var(--global-theme-color);
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .selpub-item { transition: none; }
+        .selpub-item:hover { transform: none; }
+      }
       .selpub-all { font-size: .85rem; font-weight: 600; }
       /* Bootstrap's .text-dark pinned these to #343a40, which is unreadable in dark mode;
          the companion `dark:text-white` is Tailwind syntax and has no effect here. */

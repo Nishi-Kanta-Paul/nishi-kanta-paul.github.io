@@ -2,7 +2,8 @@
     --global-bg-color: #fff;
     --global-code-bg-color: rgba(181, 9, 172, 0.05);
     --global-text-color: #000;
-    --global-text-color-light: #828282;
+    --global-text-color-light: #343b46;
+    --global-text-muted: #343b46;
     --global-theme-color: #B509AC;
     --global-hover-color: #B509AC;
     --global-footer-bg-color: #1C1C1D;
@@ -28,6 +29,7 @@ html[data-theme='dark'] {
     --global-code-bg-color: #2c3237;
     --global-text-color: #e8e8e8;
     --global-text-color-light: #e8e8e8;
+    --global-text-muted: #c3cad3;
     --global-theme-color: #2698BA;
     --global-hover-color: #2698BA;
     --global-footer-bg-color: #e8e8e8;
@@ -855,3 +857,8 @@ d-appendix a.footnote-backlink:hover {
 }
 
 /*# sourceMappingURL=main.css.map */
+/* Bootstrap's .text-muted is a fixed #6c757d: only 4.69:1 on white and unaware of
+   the dark theme. Route it through the theme token instead. */
+.text-muted {
+    color: var(--global-text-muted) !important;
+}

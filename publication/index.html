@@ -47,27 +47,27 @@
         --pc-card: #f8f9fb;
         --pc-border: rgba(0, 0, 0, .16);
         --pc-text: #16181d;
-        --pc-muted: #4b5159;
-        --pc-faint: #5f666f;
+        --pc-muted: #2e343e;
+        --pc-faint: #434b57;
       }
       html[data-theme="dark"] {
         --pc-card: #1b2026;
         --pc-border: #3b4149;
         --pc-text: #edeff2;
-        --pc-muted: #c3cad3;
-        --pc-faint: #a9b1bb;
+        --pc-muted: #d3dae2;
+        --pc-faint: #bcc4ce;
       }
       .pub-intro { color: var(--pc-muted); max-width: 46rem; font-size: .98rem; }
       .pub-stats { display: flex; flex-wrap: wrap; gap: .75rem; margin: 1.6rem 0 2.6rem; }
       .pub-stat { flex: 1 1 8rem; padding: .85rem 1rem; border: 1px solid var(--pc-border);
                   border-radius: .5rem; background: var(--pc-card); }
       .pub-stat .n { font-size: 1.6rem; font-weight: 700; line-height: 1.1; color: var(--global-theme-color); }
-      .pub-stat .l { font-size: .72rem; text-transform: uppercase; letter-spacing: .04em;
+      .pub-stat .l { font-size: .76rem; text-transform: uppercase; letter-spacing: .04em;
                      color: var(--pc-faint); margin-top: .15rem; font-weight: 600; }
       .pub-section { margin-bottom: 2.75rem; }
       .pub-section:last-of-type { margin-bottom: 5rem; }
       .pub-section > h3 { font-size: 1.25rem; font-weight: 700; margin-bottom: .25rem; color: var(--pc-text); }
-      .pub-section > .pub-note { font-size: .88rem; color: var(--pc-muted); margin-bottom: 1.1rem; }
+      .pub-section > .pub-note { font-size: .92rem; color: var(--pc-muted); margin-bottom: 1.1rem; }
       .pub-item { position: relative; padding: 1.05rem 1.15rem; margin-bottom: .9rem;
                   border: 1px solid var(--pc-border); border-left: 3px solid var(--global-theme-color);
                   border-radius: .4rem; background: var(--pc-card); }
@@ -76,13 +76,13 @@
       .pub-title { font-weight: 700; line-height: 1.45; display: inline; color: var(--pc-text); }
       .pub-title a { color: var(--pc-text); text-decoration: none; border-bottom: 1px solid transparent; }
       .pub-title a:hover { color: var(--global-theme-color); border-bottom-color: var(--global-theme-color); }
-      .pub-meta { font-size: .87rem; color: var(--pc-muted); margin-top: .5rem; margin-bottom: 0; }
+      .pub-meta { font-size: .9rem; color: var(--pc-muted); margin-top: .5rem; margin-bottom: 0; }
       .pub-meta .me { color: var(--pc-text); font-weight: 700; }
-      .pub-venue { font-size: .87rem; margin-top: .22rem; margin-bottom: 0; color: var(--pc-muted); }
-      .pub-result { font-size: .87rem; margin-top: .55rem; margin-bottom: 0; color: var(--pc-muted); }
+      .pub-venue { font-size: .9rem; margin-top: .22rem; margin-bottom: 0; color: var(--pc-muted); }
+      .pub-result { font-size: .9rem; margin-top: .55rem; margin-bottom: 0; color: var(--pc-muted); }
       .pub-result b { color: var(--pc-text); font-weight: 700; }
       .pub-links { margin-top: .75rem; display: flex; flex-wrap: wrap; gap: .4rem; }
-      .pub-links a { font-size: .78rem; font-weight: 500; padding: .26rem .65rem; border-radius: .3rem;
+      .pub-links a { font-size: .82rem; font-weight: 500; padding: .26rem .65rem; border-radius: .3rem;
                   border: 1px solid var(--pc-border); color: var(--pc-muted); background: var(--global-bg-color);
                   text-decoration: none; white-space: nowrap; }
       .pub-links a:hover { color: var(--global-theme-color); border-color: var(--global-theme-color);
@@ -96,6 +96,19 @@
       html[data-theme="dark"] .b-pub, html[data-theme="dark"] .b-acc { background: rgba(52,211,153,.16); color: #45dda6; }
       html[data-theme="dark"] .b-rev { background: rgba(96,165,250,.18); color: #7cb3fb; }
       html[data-theme="dark"] .b-prep { background: rgba(251,191,36,.18); color: #fcc63f; }
+      /* Card hover: small lift + brand-tinted shadow, matching the lab site. */
+      :root { --pc-hover-shadow: 0 12px 28px -14px rgba(28, 38, 56, .30), 0 3px 8px -4px rgba(28, 38, 56, .12); }
+      html[data-theme="dark"] { --pc-hover-shadow: 0 12px 30px -14px rgba(38, 152, 186, .40), 0 0 0 1px rgba(38, 152, 186, .16); }
+      .pub-item, .pub-stat { transition: transform .2s ease-out, box-shadow .2s ease-out, border-color .2s ease-out; }
+      .pub-item:hover, .pub-stat:hover {
+        transform: translateY(-3px);
+        box-shadow: var(--pc-hover-shadow);
+        border-color: var(--global-theme-color);
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .pub-item, .pub-stat { transition: none; }
+        .pub-item:hover, .pub-stat:hover { transform: none; }
+      }
       @media (max-width: 576px) { .pub-stat { flex: 1 1 40%; } }
     </style>
 
@@ -237,11 +250,12 @@
                 <div class="pub-item">
                     <span class="pub-badge b-acc">Accepted</span><br />
                     <span class="pub-ref">[C4]</span><span class="pub-title"><a href="https://nimishes-lab.vercel.app/papers/DR-LiteNet.pdf" target="_blank" rel="noopener">DR-LiteNet: A Lightweight Explainable Hybrid CNN Framework for Imbalanced Diabetic Retinopathy Grading via Adaptive SMOTE Fusion</a></span>
-                    <p class="pub-meta"><span class="me">N. K. Paul</span> et al., NIMISHES Lab</p>
-                    <p class="pub-venue"><em>1st Int. Conf. on Next-Generation Electrical &amp; Electronics, Computer Systems, and Technologies (iCONEECT)</em>, 2026</p>
+                    <p class="pub-meta"><span class="me">N. K. Paul</span>, M. S. I. Shovo, A. Chowdhury, and I. J. Esha</p>
+                    <p class="pub-venue"><em>1st Int. Conf. on Next-Generation Electrical &amp; Electronics, Computer Systems, and Technologies (iCONEECT)</em> &middot; Premier University, Chittagong, Bangladesh, 25&ndash;26 Sept. 2026</p>
                     <p class="pub-result"><b>88.77%</b> accuracy and <b>QWK 0.884</b> on APTOS 2019 with only <b>4.69M parameters</b>, outperforming ResNet50 (23.5M) while providing Grad-CAM explanations.</p>
                     <div class="pub-links">
                         <a href="https://nimishes-lab.vercel.app/papers/DR-LiteNet.pdf" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i> PDF</a>
+                        <a href="https://github.com/Nishi-Kanta-Paul/DR-LiteNet" target="_blank" rel="noopener"><i class="fab fa-github"></i> Code</a>
                     </div>
                 </div>
             </div>
@@ -279,7 +293,7 @@
                 <div class="pub-item">
                     <span class="pub-badge b-prep">In Preparation</span><br />
                     <span class="pub-ref">[W1]</span><span class="pub-title">CoMAF-Polyp: Calibrated Reliability-Aware Fusion of Specialist and Foundation Pseudo-Labels for Semi-Supervised Polyp Segmentation</span>
-                    <p class="pub-meta"><span class="me">N. K. Paul</span>, M. S. I. Shovo, and C. Gonzalez</p>
+                    <p class="pub-meta"><span class="me">N. K. Paul</span>, M. S. I. Shovo, and C. Gonz&aacute;lez</p>
                     <p class="pub-venue">Target: <em>WACV Workshop</em> &middot; with the Medical University of Vienna, Austria</p>
                     <p class="pub-result">Semi-supervised polyp segmentation that fuses pseudo-labels from a task-specific specialist segmenter and a vision foundation model, weighting each source by calibrated reliability rather than trusting either uniformly.</p>
                     <div class="pub-links">
