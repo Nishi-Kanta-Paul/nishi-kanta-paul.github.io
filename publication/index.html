@@ -93,9 +93,14 @@
       .b-pub, .b-acc { background: rgba(6, 118, 71, .12); color: #056b40; }
       .b-rev { background: rgba(30, 90, 168, .12); color: #1b5299; }
       .b-prep { background: rgba(150, 100, 5, .14); color: #7a5b04; }
+      .b-q1 { background: rgba(91, 33, 182, .12); color: #5b21b6; }
+      .b-q2 { background: rgba(17, 94, 89, .12); color: #115e59; }
       html[data-theme="dark"] .b-pub, html[data-theme="dark"] .b-acc { background: rgba(52,211,153,.16); color: #45dda6; }
       html[data-theme="dark"] .b-rev { background: rgba(96,165,250,.18); color: #7cb3fb; }
       html[data-theme="dark"] .b-prep { background: rgba(251,191,36,.18); color: #fcc63f; }
+      html[data-theme="dark"] .b-q1 { background: rgba(196,181,253,.18); color: #c4b5fd; }
+      html[data-theme="dark"] .b-q2 { background: rgba(94,234,212,.16); color: #5eead4; }
+      .pub-badge.b-q1, .pub-badge.b-q2 { margin-left: .35rem; }
       /* Card hover: small lift + brand-tinted shadow, matching the lab site. */
       :root { --pc-hover-shadow: 0 12px 28px -14px rgba(28, 38, 56, .30), 0 3px 8px -4px rgba(28, 38, 56, .12); }
       html[data-theme="dark"] { --pc-hover-shadow: 0 12px 30px -14px rgba(38, 152, 186, .40), 0 0 0 1px rgba(38, 152, 186, .16); }
@@ -198,8 +203,8 @@
             <div class="pub-stats">
                 <div class="pub-stat"><div class="n">9</div><div class="l">Manuscripts</div></div>
                 <div class="pub-stat"><div class="n">4</div><div class="l">Published / Accepted</div></div>
-                <div class="pub-stat"><div class="n">2</div><div class="l">Under Review</div></div>
-                <div class="pub-stat"><div class="n">4</div><div class="l">In Preparation</div></div>
+                <div class="pub-stat"><div class="n">5</div><div class="l">Under Review</div></div>
+                <div class="pub-stat"><div class="n">1</div><div class="l">In Preparation</div></div>
             </div>
 
             <div class="pub-section">
@@ -258,8 +263,8 @@
             </div>
 
             <div class="pub-section">
-                <h3>Under Review &mdash; Conference Papers</h3>
-                <p class="pub-note">Submitted to the 29th IEEE International Conference on Computer and Information Technology (ICCIT 2026).</p>
+                <h3>Under Review</h3>
+                <p class="pub-note">Submitted to IEEE conferences and peer-reviewed journals.</p>
                 <div class="pub-item">
                     <span class="pub-badge b-rev">Under Review</span><br />
                     <span class="pub-ref">[C5]</span><span class="pub-title"><a href="https://nimishes-lab.vercel.app/papers/AWEF-Net.pdf" target="_blank" rel="noopener">AWEF-Net: An Attention-Weighted Ensemble Fusion Framework for Multi-Class Pulmonary Disease Classification from Chest Radiographs</a></span>
@@ -280,12 +285,41 @@
                         <a href="https://nimishes-lab.vercel.app/papers/PDGuard.pdf" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i> PDF</a>
                     </div>
                 </div>
+                <div class="pub-item">
+                    <span class="pub-badge b-rev">Under Review</span><span class="pub-badge b-q1" title="Journal quartile ranking">Q1</span><span class="pub-badge b-q1" title="Journal Impact Factor">IF 7.7</span><br />
+                    <span class="pub-ref">[J1]</span><span class="pub-title">LCM-UNet: A Reparameterizable Local-Compensated Mamba U-Net for Skin Lesion Segmentation</span>
+                    <p class="pub-meta">M. S. I. Shovo, <span class="me">N. K. Paul</span>, and K. Morol</p>
+                    <p class="pub-venue"><em>IEEE Journal of Biomedical and Health Informatics (JBHI)</em> &middot; with ELITE Research Lab</p>
+                    <p class="pub-result">Ultra-compact state-space segmentation at <b>34,180 parameters</b> and 0.06 GFLOPs after reparameterization, improving IoU and DSC on ISIC 2017/2018 at identical inference cost.</p>
+                    <div class="pub-links">
+                        <a href="mailto:nishikantapaul108@gmail.com?subject=Manuscript%20request%20LCM-UNet"><i class="fas fa-envelope"></i> Request from authors</a>
+                    </div>
+                </div>
+                <div class="pub-item">
+                    <span class="pub-badge b-rev">Under Review</span><span class="pub-badge b-q1" title="Journal quartile ranking">Q1</span><span class="pub-badge b-q1" title="Journal Impact Factor">IF 4.2</span><br />
+                    <span class="pub-ref">[J2]</span><span class="pub-title">Anomaly-Aware ForensiBlock: Explainable Behavioral Monitoring for Digital Evidence Access</span>
+                    <p class="pub-meta">A. J. Akbarfam, <span class="me">N. K. Paul</span>, and S. Ismail</p>
+                    <p class="pub-venue"><em>IEEE Access</em> &middot; with Washington State University</p>
+                    <p class="pub-result">Real-time behavioral anomaly scoring over blockchain evidence access with asynchronous TreeSHAP explanations: <b>AUROC 0.953</b> on CERT r4.2 at <b>9.37 ms</b> mean scoring overhead.</p>
+                    <div class="pub-links">
+                        <a href="mailto:nishikantapaul108@gmail.com?subject=Manuscript%20request%20Anomaly-Aware%20ForensiBlock"><i class="fas fa-envelope"></i> Request from authors</a>
+                    </div>
+                </div>
+                <div class="pub-item">
+                    <span class="pub-badge b-rev">Under Review</span><span class="pub-badge b-q1" title="Journal quartile ranking">Q1</span><span class="pub-badge b-q1" title="Journal Impact Factor">IF 2.8</span><br />
+                    <span class="pub-ref">[J3]</span><span class="pub-title">BGD-SF PolySegNet: Boundary-Guided Dynamic Selective Fusion Network for Robust Polyp Segmentation in Colonoscopy Images</span>
+                    <p class="pub-meta"><span class="me">N. K. Paul</span>, S. Maherin, and M. Akter</p>
+                    <p class="pub-venue"><em>PLOS ONE</em></p>
+                    <p class="pub-result"><b>Dice 0.887</b> / IoU 0.839 at <b>35 FPS</b>, with <b>+15.7%</b> Boundary-F1 over the strongest CNN baselines and external validation on CVC-ClinicDB, CVC-ColonDB, ETIS-Larib, and CVC-300.</p>
+                    <div class="pub-links">
+                        <a href="mailto:nishikantapaul108@gmail.com?subject=Manuscript%20request%20BGD-SF%20PolySegNet"><i class="fas fa-envelope"></i> Request from authors</a>
+                    </div>
+                </div>
             </div>
 
             <div class="pub-section">
                 <h3>In Preparation</h3>
-                <p class="pub-note">Journal and workshop manuscripts, with journal submissions targeted for September 2026.
-                    These are not circulated publicly &mdash; please
+                <p class="pub-note">Workshop manuscript in preparation. Not circulated publicly &mdash; please
                     <a href="mailto:nishikantapaul108@gmail.com">email me</a> and the authors will gladly share a copy on request.</p>
                 <div class="pub-item">
                     <span class="pub-badge b-prep">In Preparation</span><br />
@@ -295,36 +329,6 @@
                     <p class="pub-result">Semi-supervised polyp segmentation that fuses pseudo-labels from a task-specific specialist segmenter and a vision foundation model, weighting each source by calibrated reliability rather than trusting either uniformly.</p>
                     <div class="pub-links">
                         <a href="mailto:nishikantapaul108@gmail.com?subject=Manuscript%20request%20CoMAF-Polyp"><i class="fas fa-envelope"></i> Request from authors</a>
-                    </div>
-                </div>
-                <div class="pub-item">
-                    <span class="pub-badge b-prep">In Preparation</span><br />
-                    <span class="pub-ref">[J1]</span><span class="pub-title">Anomaly-Aware ForensiBlock: Explainable Behavioral Monitoring for Digital Evidence Access</span>
-                    <p class="pub-meta">A. J. Akbarfam, <span class="me">N. K. Paul</span>, and S. Ismail</p>
-                    <p class="pub-venue">Journal manuscript &middot; with Washington State University</p>
-                    <p class="pub-result">Real-time behavioral anomaly scoring over blockchain evidence access with asynchronous TreeSHAP explanations: <b>AUROC 0.953</b> on CERT r4.2 at <b>9.37 ms</b> mean scoring overhead.</p>
-                    <div class="pub-links">
-                        <a href="mailto:nishikantapaul108@gmail.com?subject=Manuscript%20request%20Anomaly-Aware%20ForensiBlock"><i class="fas fa-envelope"></i> Request from authors</a>
-                    </div>
-                </div>
-                <div class="pub-item">
-                    <span class="pub-badge b-prep">In Preparation</span><br />
-                    <span class="pub-ref">[J2]</span><span class="pub-title">BGD-SF PolySegNet: Boundary-Guided Dynamic Selective Fusion Network for Robust Polyp Segmentation in Colonoscopy Images</span>
-                    <p class="pub-meta"><span class="me">N. K. Paul</span>, S. Maherin, and M. Akter</p>
-                    <p class="pub-venue">Journal manuscript</p>
-                    <p class="pub-result"><b>Dice 0.887</b> / IoU 0.839 at <b>35 FPS</b>, with <b>+15.7%</b> Boundary-F1 over the strongest CNN baselines and external validation on CVC-ClinicDB, CVC-ColonDB, ETIS-Larib, and CVC-300.</p>
-                    <div class="pub-links">
-                        <a href="mailto:nishikantapaul108@gmail.com?subject=Manuscript%20request%20BGD-SF%20PolySegNet"><i class="fas fa-envelope"></i> Request from authors</a>
-                    </div>
-                </div>
-                <div class="pub-item">
-                    <span class="pub-badge b-prep">In Preparation</span><br />
-                    <span class="pub-ref">[J3]</span><span class="pub-title">LCM-UNet: A Reparameterizable Local-Compensated Mamba U-Net for Skin Lesion Segmentation</span>
-                    <p class="pub-meta">M. S. I. Shovo, <span class="me">N. K. Paul</span>, and K. Morol</p>
-                    <p class="pub-venue">Journal manuscript &middot; with ELITE Research Lab</p>
-                    <p class="pub-result">Ultra-compact state-space segmentation at <b>34,180 parameters</b> and 0.06 GFLOPs after reparameterization, improving IoU and DSC on ISIC 2017/2018 at identical inference cost.</p>
-                    <div class="pub-links">
-                        <a href="mailto:nishikantapaul108@gmail.com?subject=Manuscript%20request%20LCM-UNet"><i class="fas fa-envelope"></i> Request from authors</a>
                     </div>
                 </div>
             </div>
