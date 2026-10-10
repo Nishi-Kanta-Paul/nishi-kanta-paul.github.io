@@ -11,8 +11,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Nishi Kanta Paul | Publications</title>
     <meta name="author" content="Nishi Kanta Paul" />
-    <meta name="description" content="Research publications by Nishi Kanta Paul - 11 manuscripts spanning EEG sleep staging, Parkinson's freezing-of-gait detection, diabetic retinopathy grading, polyp and skin lesion segmentation, chest radiograph classification, chest X-ray grounding, agentic vision systems, and explainable blockchain forensics, plus published work on driver distraction detection." />
-    <meta name="keywords" content="Nishi Kanta Paul, publications, research papers, NIMISHES Lab, SleepEffFormer, WaveFoG, DR-LiteNet, AWEF-Net, PDGuard, LCM-UNet, BGD-SF PolySegNet, CoMAF-Polyp, APED-CXR, ForensiBlock, medical imaging, explainable AI, computer vision, agentic AI" />
+    <meta name="description" content="Research publications by Nishi Kanta Paul - accepted IEEE conference papers, journal submissions to IEEE JBHI, IEEE Access, and PLOS ONE, and WACV 2027 workshop papers spanning EEG sleep staging, Parkinson&#39;s gait analysis, diabetic retinopathy, polyp and skin lesion segmentation, underwater vision, and trustworthy medical AI." />
+    <meta name="keywords" content="Nishi Kanta Paul, publications, research papers, NIMISHES Lab, SleepEffFormer, WaveFoG, DR-LiteNet, LCM-UNet, BGD-SF PolySegNet, ForensiBlock, AquaProbe, APED-CXR, CoMAF-Polyp, medical imaging, explainable AI, computer vision" />
 
     <!-- Bootstrap & MDB -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -41,80 +41,66 @@
 
     <style>
       /* Local palette: the site's --global-card-bg-color equals its page background (#fff)
-         and --global-text-color-light (#828282) falls below readable contrast, so the
+         and --global-text-color-light falls below readable contrast, so the
          publication list defines its own accessible tokens. */
       :root {
         --pc-card: #f8f9fb;
         --pc-border: rgba(0, 0, 0, .16);
         --pc-text: #16181d;
         --pc-muted: #2e343e;
-        --pc-faint: #434b57;
+        --pc-link: #B509AC;
+        --pc-on-accent: #ffffff;
+        --pc-hover-shadow: 0 12px 28px -14px rgba(28, 38, 56, .30), 0 3px 8px -4px rgba(28, 38, 56, .12);
       }
       html[data-theme="dark"] {
         --pc-card: #1b2026;
         --pc-border: #3b4149;
         --pc-text: #edeff2;
         --pc-muted: #d3dae2;
-        --pc-faint: #bcc4ce;
+        --pc-link: #4fb8d6;
+        --pc-on-accent: #0f1215; /* white on #2698BA is only 3.3:1 */
+        --pc-hover-shadow: 0 12px 30px -14px rgba(38, 152, 186, .40), 0 0 0 1px rgba(38, 152, 186, .16);
       }
       .pub-intro { color: var(--pc-muted); max-width: 46rem; font-size: .98rem; }
-      .pub-stats { display: flex; flex-wrap: wrap; gap: .75rem; margin: 1.6rem 0 2.6rem; }
-      .pub-stat { flex: 1 1 8rem; padding: .85rem 1rem; border: 1px solid var(--pc-border);
-                  border-radius: .5rem; background: var(--pc-card); }
-      .pub-stat .n { font-size: 1.6rem; font-weight: 700; line-height: 1.1; color: var(--global-theme-color); }
-      .pub-stat .l { font-size: .76rem; text-transform: uppercase; letter-spacing: .04em;
-                     color: var(--pc-faint); margin-top: .15rem; font-weight: 600; }
-      .pub-section { margin-bottom: 2.75rem; }
-      .pub-section:last-of-type { margin-bottom: 5rem; }
+
+      .pub-filter { display: flex; flex-wrap: wrap; gap: .5rem; margin: 1.4rem 0 2.2rem; }
+      .pub-filter button { font-size: .88rem; font-weight: 600; padding: .38rem .95rem; border-radius: 999px;
+                           border: 1px solid var(--pc-border); background: var(--pc-card); color: var(--pc-muted);
+                           cursor: pointer; transition: color .15s, border-color .15s, background-color .15s; }
+      .pub-filter button:hover { color: var(--global-theme-color); border-color: var(--global-theme-color); }
+      .pub-filter button[aria-pressed="true"] { background: var(--global-theme-color);
+                                                border-color: var(--global-theme-color); color: var(--pc-on-accent); }
+      .pub-filter button:focus-visible { outline: 2px solid var(--global-theme-color); outline-offset: 2px; }
+      .pub-filter .pub-count { color: inherit; font-weight: 500; opacity: .85; }
+
+      .pub-list { margin-bottom: 5rem; } /* clearance for the fixed footer */
+      .pub-section { margin-bottom: 2.4rem; }
       .pub-section > h3 { font-size: 1.25rem; font-weight: 700; margin-bottom: .25rem; color: var(--pc-text); }
-      .pub-section > .pub-note { font-size: .92rem; color: var(--pc-muted); margin-bottom: 1.1rem; }
-      .pub-item { position: relative; padding: 1.05rem 1.15rem; margin-bottom: .9rem;
-                  border: 1px solid var(--pc-border); border-left: 3px solid var(--global-theme-color);
-                  border-radius: .4rem; background: var(--pc-card); }
-      .pub-ref { font-size: .72rem; font-weight: 700; color: var(--pc-faint);
-                 letter-spacing: .03em; margin-right: .4rem; }
-      .pub-title { font-weight: 700; line-height: 1.45; display: inline; color: var(--pc-text); }
-      .pub-title a { color: var(--pc-text); text-decoration: none; border-bottom: 1px solid transparent; }
-      .pub-title a:hover { color: var(--global-theme-color); border-bottom-color: var(--global-theme-color); }
-      .pub-meta { font-size: .9rem; color: var(--pc-muted); margin-top: .5rem; margin-bottom: 0; }
-      .pub-meta .me { color: var(--pc-text); font-weight: 700; }
-      .pub-venue { font-size: .9rem; margin-top: .22rem; margin-bottom: 0; color: var(--pc-muted); }
-      .pub-result { font-size: .9rem; margin-top: .55rem; margin-bottom: 0; color: var(--pc-muted); }
-      .pub-result b { color: var(--pc-text); font-weight: 700; }
-      .pub-links { margin-top: .75rem; display: flex; flex-wrap: wrap; gap: .4rem; }
-      .pub-links a { font-size: .82rem; font-weight: 500; padding: .26rem .65rem; border-radius: .3rem;
-                  border: 1px solid var(--pc-border); color: var(--pc-muted); background: var(--global-bg-color);
-                  text-decoration: none; white-space: nowrap; }
-      .pub-links a:hover { color: var(--global-theme-color); border-color: var(--global-theme-color);
-                           text-decoration: none; }
-      .pub-badge { font-size: .68rem; font-weight: 700; text-transform: uppercase; letter-spacing: .05em;
-                   padding: .18rem .5rem; border-radius: .25rem;
-                   display: inline-block; margin-bottom: .4rem; }
-      .b-pub, .b-acc { background: rgba(6, 118, 71, .12); color: #056b40; }
-      .b-rev { background: rgba(30, 90, 168, .12); color: #1b5299; }
-      .b-prep { background: rgba(150, 100, 5, .14); color: #7a5b04; }
-      .b-q1 { background: rgba(91, 33, 182, .12); color: #5b21b6; }
-      .b-q2 { background: rgba(17, 94, 89, .12); color: #115e59; }
-      html[data-theme="dark"] .b-pub, html[data-theme="dark"] .b-acc { background: rgba(52,211,153,.16); color: #45dda6; }
-      html[data-theme="dark"] .b-rev { background: rgba(96,165,250,.18); color: #7cb3fb; }
-      html[data-theme="dark"] .b-prep { background: rgba(251,191,36,.18); color: #fcc63f; }
-      html[data-theme="dark"] .b-q1 { background: rgba(196,181,253,.18); color: #c4b5fd; }
-      html[data-theme="dark"] .b-q2 { background: rgba(94,234,212,.16); color: #5eead4; }
-      .pub-badge.b-q1, .pub-badge.b-q2 { margin-left: .35rem; }
-      /* Card hover: small lift + brand-tinted shadow, matching the lab site. */
-      :root { --pc-hover-shadow: 0 12px 28px -14px rgba(28, 38, 56, .30), 0 3px 8px -4px rgba(28, 38, 56, .12); }
-      html[data-theme="dark"] { --pc-hover-shadow: 0 12px 30px -14px rgba(38, 152, 186, .40), 0 0 0 1px rgba(38, 152, 186, .16); }
-      .pub-item, .pub-stat { transition: transform .2s ease-out, box-shadow .2s ease-out, border-color .2s ease-out; }
-      .pub-item:hover, .pub-stat:hover {
-        transform: translateY(-3px);
-        box-shadow: var(--pc-hover-shadow);
-        border-color: var(--global-theme-color);
-      }
+      .pub-section > .pub-note { font-size: .92rem; color: var(--pc-muted); margin-bottom: 1rem; }
+
+      .pub-item { padding: .95rem 1.15rem; margin-bottom: .8rem; border: 1px solid var(--pc-border);
+                  border-left: 3px solid var(--global-theme-color); border-radius: .4rem; background: var(--pc-card);
+                  transition: transform .2s ease-out, box-shadow .2s ease-out, border-color .2s ease-out; }
+      .pub-item:hover { transform: translateY(-3px); box-shadow: var(--pc-hover-shadow);
+                        border-color: var(--global-theme-color); }
+      .pub-head { margin: 0; font-size: 1rem; font-weight: 700; line-height: 1.45; color: var(--pc-text); }
+      .pub-tag { color: var(--pc-link); margin-right: .4rem; }
+      .pub-metric { display: inline-block; font-size: .72rem; font-weight: 700; padding: .1rem .42rem;
+                    border-radius: .25rem; margin-right: .3rem; vertical-align: .08rem;
+                    background: rgba(91, 33, 182, .12); color: #5b21b6; }
+      html[data-theme="dark"] .pub-metric { background: rgba(196, 181, 253, .18); color: #c4b5fd; }
+      .pub-authors { font-size: .9rem; color: var(--pc-muted); margin: .35rem 0 0; }
+      .pub-authors .me { color: var(--pc-text); font-weight: 700; }
+      .pub-venue { font-size: .9rem; font-style: italic; color: var(--pc-muted); margin: .2rem 0 0; }
+      .pub-links { font-size: .9rem; margin: .45rem 0 0; display: flex; flex-wrap: wrap; gap: .2rem .8rem;
+                   color: var(--pc-muted); }
+      .pub-links a { color: var(--pc-link); }
+      .pub-footnote { font-size: .9rem; color: var(--pc-muted); }
+
       @media (prefers-reduced-motion: reduce) {
-        .pub-item, .pub-stat { transition: none; }
-        .pub-item:hover, .pub-stat:hover { transform: none; }
+        .pub-item { transition: none; }
+        .pub-item:hover { transform: none; }
       }
-      @media (max-width: 576px) { .pub-stat { flex: 1 1 40%; } }
     </style>
 
     <link rel="canonical" href="https://Nishi KantaPaul.github.io/blog/" />
@@ -194,166 +180,131 @@
         <div class="container mt-5">
             <h1>Publications</h1>
             <p class="pub-intro mt-3">
-                Eleven manuscripts across medical imaging, biosignal modelling, efficient deep learning, and
-                trustworthy AI &mdash; developed at <a href="https://nimishes-lab.vercel.app/" target="_blank"
-                rel="noopener">NIMISHES Lab</a> and with collaborators at the Medical University of Vienna,
-                Washington State University, ELITE Research Lab, and the American University of Sharjah. PDFs
-                are linked where available.
+                Peer-reviewed and in-progress research across medical imaging, biosignal modelling, efficient deep
+                learning, and trustworthy AI &mdash; developed at <a href="https://nimishes-lab.vercel.app/"
+                target="_blank" rel="noopener">NIMISHES Lab</a> and with collaborators at the Medical University of
+                Vienna, Washington State University, the University of South Florida, the American University of
+                Sharjah, and ELITE Research Lab.
             </p>
 
-            <div class="pub-stats">
-                <div class="pub-stat"><div class="n">11</div><div class="l">Manuscripts</div></div>
-                <div class="pub-stat"><div class="n">4</div><div class="l">Published / Accepted</div></div>
-                <div class="pub-stat"><div class="n">5</div><div class="l">Under Review</div></div>
-                <div class="pub-stat"><div class="n">3</div><div class="l">In Preparation</div></div>
+            <div class="pub-filter" id="pub-filter" role="group" aria-label="Filter publications">
+                <button type="button" data-filter="all" aria-pressed="true">All <span class="pub-count">(11)</span></button>
+                <button type="button" data-filter="published" aria-pressed="false">Published <span class="pub-count">(1)</span></button>
+                <button type="button" data-filter="accepted" aria-pressed="false">Accepted <span class="pub-count">(3)</span></button>
+                <button type="button" data-filter="review" aria-pressed="false">Under Review <span class="pub-count">(5)</span></button>
+                <button type="button" data-filter="prep" aria-pressed="false">In Preparation <span class="pub-count">(2)</span></button>
             </div>
 
-            <div class="pub-section">
-                <h3>Published</h3>
-                <p class="pub-note">Peer-reviewed and indexed on IEEE Xplore.</p>
-                <div class="pub-item">
-                    <span class="pub-badge b-pub">Published</span><br />
-                    <span class="pub-ref">[C1]</span><span class="pub-title"><a href="https://ieeexplore.ieee.org/document/10499531" target="_blank" rel="noopener">Video-based Driver Distraction Detection using Transfer Learning: Bangladesh Perspective</a></span>
-                    <p class="pub-meta">M. M. Kabir, M. A. Nawar, M. I. Remon, <span class="me">N. K. Paul</span>, H. Bhuiyan, and M. M. Hoque</p>
-                    <p class="pub-venue"><em>Int. Conf. on Advances in Computing, Communication, Electrical, and Smart Systems (iCACCESS)</em>, 2024 &middot; IEEE Xplore</p>
-                    <p class="pub-result">Transfer-learning approach to driver distraction recognition from in-vehicle video, evaluated on Bangladeshi road conditions.</p>
-                    <div class="pub-links">
-                        <a href="https://ieeexplore.ieee.org/document/10499531" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> Abstract</a>
-                        <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=10499531" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i> PDF</a>
-                        <a href="https://ieeexplore.ieee.org/xpl/downloadCitations?recordIds=10499531&citations-format=bibtex&download-format=download" target="_blank" rel="noopener"><i class="fas fa-quote-right"></i> BibTeX</a>
+            <div class="pub-list">
+                <div class="pub-section" data-status="published">
+                    <h3>Published</h3>
+                    <p class="pub-note">Peer-reviewed and indexed on IEEE Xplore.</p>
+                    <div class="pub-item">
+                        <p class="pub-head"><span class="pub-tag">[iCACCESS 2024]</span>Video-based Driver Distraction Detection using Transfer Learning: Bangladesh Perspective.</p>
+                        <p class="pub-authors">Md. Muhaiminul Kabir, Md Abrar Nawar, Mehedi Islam Remon, <span class="me">Nishi Kanta Paul</span>, Hanif Bhuiyan, Md Moinul Hoque.</p>
+                        <p class="pub-venue">International Conference on Advances in Computing, Communication, Electrical, and Smart Systems (iCACCESS), 2024</p>
+                        <p class="pub-links"><span>[<a href="https://ieeexplore.ieee.org/document/10499531" target="_blank" rel="noopener">Paper</a>]</span> <span>[<a href="https://ieeexplore.ieee.org/xpl/downloadCitations?recordIds=10499531&amp;citations-format=bibtex&amp;download-format=download" target="_blank" rel="noopener">BibTeX</a>]</span></p>
                     </div>
                 </div>
+
+                <div class="pub-section" data-status="accepted">
+                    <h3>Accepted</h3>
+                    <p class="pub-note">Accepted for presentation at IEEE and international conferences in 2026.</p>
+                    <div class="pub-item">
+                        <p class="pub-head"><span class="pub-tag">[BECITHCON 2026]</span>SleepEffFormer: Efficient CNN-Transformer with Transition-Aware Smoothing for Single-Channel EEG Sleep Stage Classification.</p>
+                        <p class="pub-authors"><span class="me">Nishi Kanta Paul</span>, Md Shihabul Islam Shovo, Israt Jerin Esha, Adrita Rahman.</p>
+                        <p class="pub-venue">Proceedings of the 5th IEEE International Conference on Biomedical Engineering, Computer and Information Technology for Health (BECITHCON), Dhaka, Bangladesh, 2026</p>
+                        <p class="pub-links"><span>[<a href="https://nimishes-lab.vercel.app/papers/SleepEffFormer.pdf" target="_blank" rel="noopener">Paper</a>]</span> <span>[<a href="https://github.com/Nishi-Kanta-Paul/SleepStage" target="_blank" rel="noopener">Code</a>]</span></p>
+                    </div>
+                    <div class="pub-item">
+                        <p class="pub-head"><span class="pub-tag">[BECITHCON 2026]</span>WaveFoG: Wavelet-Gated Transformer for Parkinson&rsquo;s Freezing of Gait Detection Using Wearable Accelerometer Signals.</p>
+                        <p class="pub-authors">Md Shihabul Islam Shovo, <span class="me">Nishi Kanta Paul</span>, Adrita Rahman, Israt Jerin Esha.</p>
+                        <p class="pub-venue">Proceedings of the 5th IEEE International Conference on Biomedical Engineering, Computer and Information Technology for Health (BECITHCON), Dhaka, Bangladesh, 2026</p>
+                        <p class="pub-links"><span>[<a href="https://nimishes-lab.vercel.app/papers/WaveFoG.pdf" target="_blank" rel="noopener">Paper</a>]</span> <span>[<a href="https://github.com/Shihabul-Shuvo/WaveFoG" target="_blank" rel="noopener">Code</a>]</span></p>
+                    </div>
+                    <div class="pub-item">
+                        <p class="pub-head"><span class="pub-tag">[iCONEECT 2026]</span>DR-LiteNet: A Lightweight Explainable Hybrid CNN Framework for Imbalanced Diabetic Retinopathy Grading via Adaptive SMOTE Fusion.</p>
+                        <p class="pub-authors"><span class="me">Nishi Kanta Paul</span>, Md Shihabul Islam Shovo, Audrija Chowdhury, Israt Jahan Esha.</p>
+                        <p class="pub-venue">Proceedings of the 1st International Conference on Next-Generation Electrical &amp; Electronics, Computer Systems, and Technologies (iCONEECT), Chittagong, Bangladesh, 2026</p>
+                        <p class="pub-links"><span>[<a href="https://nimishes-lab.vercel.app/papers/DR-LiteNet.pdf" target="_blank" rel="noopener">Paper</a>]</span> <span>[<a href="https://github.com/Nishi-Kanta-Paul/DR-LiteNet" target="_blank" rel="noopener">Code</a>]</span></p>
+                    </div>
+                </div>
+
+                <div class="pub-section" data-status="review">
+                    <h3>Under Review</h3>
+                    <p class="pub-note">Submitted to peer-reviewed journals and WACV 2027 workshops.</p>
+                    <div class="pub-item">
+                        <p class="pub-head"><span class="pub-tag">[IEEE JBHI]</span><span class="pub-metric" title="Journal quartile ranking">Q1</span><span class="pub-metric" title="Journal Impact Factor">IF 7.7</span>LCM-UNet: A Reparameterizable Local-Compensated Mamba U-Net for Skin Lesion Segmentation.</p>
+                        <p class="pub-authors">Md Shihabul Islam Shovo, <span class="me">Nishi Kanta Paul</span>, Kishor Morol.</p>
+                        <p class="pub-venue">IEEE Journal of Biomedical and Health Informatics</p>
+                        <p class="pub-links"><span>[<a href="mailto:nishikantapaul108@gmail.com?subject=Manuscript%20request%3A%20LCM-UNet">Request PDF</a>]</span></p>
+                    </div>
+                    <div class="pub-item">
+                        <p class="pub-head"><span class="pub-tag">[IEEE Access]</span><span class="pub-metric" title="Journal quartile ranking">Q1</span><span class="pub-metric" title="Journal Impact Factor">IF 4.2</span>Anomaly-Aware ForensiBlock: Explainable Behavioral Monitoring for Digital Evidence Access.</p>
+                        <p class="pub-authors">Asma Jodeiri Akbarfam, <span class="me">Nishi Kanta Paul</span>, Shereen Ismail.</p>
+                        <p class="pub-venue">IEEE Access</p>
+                        <p class="pub-links"><span>[<a href="mailto:nishikantapaul108@gmail.com?subject=Manuscript%20request%3A%20Anomaly-Aware%20ForensiBlock">Request PDF</a>]</span></p>
+                    </div>
+                    <div class="pub-item">
+                        <p class="pub-head"><span class="pub-tag">[PLOS ONE]</span><span class="pub-metric" title="Journal quartile ranking">Q1</span><span class="pub-metric" title="Journal Impact Factor">IF 2.8</span>BGD-SF PolySegNet: Boundary-Guided Dynamic Selective Fusion Network for Robust Polyp Segmentation in Colonoscopy Images.</p>
+                        <p class="pub-authors"><span class="me">Nishi Kanta Paul</span>, Shamia Maherin, Morsheda Akter.</p>
+                        <p class="pub-venue">PLOS ONE</p>
+                        <p class="pub-links"><span>[<a href="mailto:nishikantapaul108@gmail.com?subject=Manuscript%20request%3A%20BGD-SF%20PolySegNet">Request PDF</a>]</span></p>
+                    </div>
+                    <div class="pub-item">
+                        <p class="pub-head"><span class="pub-tag">[WACV 2027 Workshop]</span>Coupled or Independent? Fault Coupling in Agentic Medical Vision Systems.</p>
+                        <p class="pub-authors"><span class="me">Nishi Kanta Paul</span>, Md Shihabul Islam Shovo, Jamil Fayyad, Md Mostafijur Rahman.</p>
+                        <p class="pub-venue">Workshop on Foundation AI for Biomedical Reasoning, Imaging, and Cognition (FABRIC), IEEE/CVF Winter Conference on Applications of Computer Vision (WACV) 2027</p>
+                        <p class="pub-links"><span>[<a href="mailto:nishikantapaul108@gmail.com?subject=Manuscript%20request%3A%20Coupled%20or%20Independent">Request PDF</a>]</span></p>
+                    </div>
+                    <div class="pub-item">
+                        <p class="pub-head"><span class="pub-tag">[WACV 2027 Workshop]</span>AquaProbe: Efficient Adaptation of Frozen Vision Models for Underwater Images.</p>
+                        <p class="pub-authors">Md Shihabul Islam Shovo, <span class="me">Nishi Kanta Paul</span>, Trung Tien Dong, Xiaomin Lin.</p>
+                        <p class="pub-venue">5th Workshop on Maritime Computer Vision (MaCVi), IEEE/CVF Winter Conference on Applications of Computer Vision (WACV) 2027</p>
+                        <p class="pub-links"><span>[<a href="mailto:nishikantapaul108@gmail.com?subject=Manuscript%20request%3A%20AquaProbe">Request PDF</a>]</span></p>
+                    </div>
+                </div>
+
+                <div class="pub-section" data-status="prep">
+                    <h3>In Preparation</h3>
+                    <p class="pub-note">Manuscripts in preparation for IEEE ISBI 2027 and MIDL 2027.</p>
+                    <div class="pub-item">
+                        <p class="pub-head"><span class="pub-tag">[ISBI 2027]</span>APED-CXR: Adaptive Privileged Evidence Distillation for Chest X-Ray Grounding with Image-Only Inference.</p>
+                        <p class="pub-authors"><span class="me">Nishi Kanta Paul</span>, Md Shihabul Islam Shovo, Jamil Fayyad.</p>
+                        <p class="pub-venue">Target venue: IEEE International Symposium on Biomedical Imaging (ISBI) 2027</p>
+                        <p class="pub-links"><span>[<a href="mailto:nishikantapaul108@gmail.com?subject=Manuscript%20request%3A%20APED-CXR">Request PDF</a>]</span></p>
+                    </div>
+                    <div class="pub-item">
+                        <p class="pub-head"><span class="pub-tag">[MIDL 2027]</span>CoMAF-Polyp: Calibrated Reliability-Aware Fusion of Specialist and Foundation Pseudo-Labels for Semi-Supervised Polyp Segmentation.</p>
+                        <p class="pub-authors"><span class="me">Nishi Kanta Paul</span>, Md Shihabul Islam Shovo, Camila Gonz&aacute;lez.</p>
+                        <p class="pub-venue">Target venue: Medical Imaging with Deep Learning (MIDL) 2027</p>
+                        <p class="pub-links"><span>[<a href="mailto:nishikantapaul108@gmail.com?subject=Manuscript%20request%3A%20CoMAF-Polyp">Request PDF</a>]</span></p>
+                    </div>
+                </div>
+
+                <p class="pub-footnote">Manuscripts under review or in preparation are not distributed publicly &mdash;
+                    please <a href="mailto:nishikantapaul108@gmail.com">email me</a> and the authors will gladly share a copy on request.</p>
             </div>
 
-            <div class="pub-section">
-                <h3>Accepted &mdash; Conference Papers</h3>
-                <p class="pub-note">Accepted for presentation at IEEE and international conferences in 2026.</p>
-                <div class="pub-item">
-                    <span class="pub-badge b-acc">Accepted</span><br />
-                    <span class="pub-ref">[C2]</span><span class="pub-title"><a href="https://nimishes-lab.vercel.app/papers/SleepEffFormer.pdf" target="_blank" rel="noopener">SleepEffFormer: Efficient CNN-Transformer with Transition-Aware Smoothing for Single-Channel EEG Sleep Stage Classification</a></span>
-                    <p class="pub-meta"><span class="me">N. K. Paul</span>, M. S. I. Shovo, I. J. Esha, and A. Rahman</p>
-                    <p class="pub-venue"><em>5th IEEE Int. Conf. on Biomedical Engineering, Computer and Information Technology for Health (BECITHCON)</em> &middot; Dhaka, Bangladesh, 4&ndash;5 Sept. 2026</p>
-                    <p class="pub-result"><b>83.9%</b> accuracy, <b>78.9%</b> macro-F1 and Cohen&rsquo;s &kappa; = 0.765 on Sleep-EDF Expanded (78 recordings, subject-wise split), matching AttnSleep with <b>3&ndash;5&times; fewer parameters</b> (~367K).</p>
-                    <div class="pub-links">
-                        <a href="https://nimishes-lab.vercel.app/papers/SleepEffFormer.pdf" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i> PDF</a>
-                        <a href="https://github.com/Nishi-Kanta-Paul/SleepStage" target="_blank" rel="noopener"><i class="fab fa-github"></i> Code</a>
-                    </div>
-                </div>
-                <div class="pub-item">
-                    <span class="pub-badge b-acc">Accepted</span><br />
-                    <span class="pub-ref">[C3]</span><span class="pub-title"><a href="https://nimishes-lab.vercel.app/papers/WaveFoG.pdf" target="_blank" rel="noopener">WaveFoG: Wavelet-Gated Transformer for Parkinson&rsquo;s Freezing of Gait Detection Using Wearable Accelerometer Signals</a></span>
-                    <p class="pub-meta">M. S. I. Shovo, <span class="me">N. K. Paul</span>, A. Rahman, and I. J. Esha</p>
-                    <p class="pub-venue"><em>5th IEEE Int. Conf. on Biomedical Engineering, Computer and Information Technology for Health (BECITHCON)</em> &middot; Dhaka, Bangladesh, 4&ndash;5 Sept. 2026</p>
-                    <p class="pub-result"><b>F1 0.875 &plusmn; 0.017</b> and AUPRC 0.833 on the Kaggle TLVMC dataset under subject-independent ten-fold cross-validation &mdash; up to <b>+5.4 pp F1</b> over CNN, Bi-LSTM, and Transformer baselines.</p>
-                    <div class="pub-links">
-                        <a href="https://nimishes-lab.vercel.app/papers/WaveFoG.pdf" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i> PDF</a>
-                        <a href="https://github.com/Shihabul-Shuvo/WaveFoG" target="_blank" rel="noopener"><i class="fab fa-github"></i> Code</a>
-                    </div>
-                </div>
-                <div class="pub-item">
-                    <span class="pub-badge b-acc">Accepted</span><br />
-                    <span class="pub-ref">[C4]</span><span class="pub-title"><a href="https://nimishes-lab.vercel.app/papers/DR-LiteNet.pdf" target="_blank" rel="noopener">DR-LiteNet: A Lightweight Explainable Hybrid CNN Framework for Imbalanced Diabetic Retinopathy Grading via Adaptive SMOTE Fusion</a></span>
-                    <p class="pub-meta"><span class="me">N. K. Paul</span>, M. S. I. Shovo, A. Chowdhury, and I. J. Esha</p>
-                    <p class="pub-venue"><em>1st Int. Conf. on Next-Generation Electrical &amp; Electronics, Computer Systems, and Technologies (iCONEECT)</em> &middot; Premier University, Chittagong, Bangladesh, 25&ndash;26 Sept. 2026</p>
-                    <p class="pub-result"><b>88.77%</b> accuracy and <b>QWK 0.884</b> on APTOS 2019 with only <b>4.69M parameters</b>, outperforming ResNet50 (23.5M) while providing Grad-CAM explanations.</p>
-                    <div class="pub-links">
-                        <a href="https://nimishes-lab.vercel.app/papers/DR-LiteNet.pdf" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i> PDF</a>
-                        <a href="https://github.com/Nishi-Kanta-Paul/DR-LiteNet" target="_blank" rel="noopener"><i class="fab fa-github"></i> Code</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="pub-section">
-                <h3>Under Review</h3>
-                <p class="pub-note">Submitted to IEEE conferences and peer-reviewed journals.</p>
-                <div class="pub-item">
-                    <span class="pub-badge b-rev">Under Review</span><br />
-                    <span class="pub-ref">[C5]</span><span class="pub-title"><a href="https://nimishes-lab.vercel.app/papers/AWEF-Net.pdf" target="_blank" rel="noopener">AWEF-Net: An Attention-Weighted Ensemble Fusion Framework for Multi-Class Pulmonary Disease Classification from Chest Radiographs</a></span>
-                    <p class="pub-meta"><span class="me">N. K. Paul</span> et al., NIMISHES Lab</p>
-                    <p class="pub-venue"><em>29th IEEE Int. Conf. on Computer and Information Technology (ICCIT)</em>, 2026</p>
-                    <p class="pub-result"><b>96.3%</b> macro-F1 and <b>97.1%</b> COVID-19 recall on the COVID-19 Radiography Database (21,165 images), a <b>+1.4 pp</b> gain over the strongest fixed-fusion baseline at under 0.6% extra parameters.</p>
-                    <div class="pub-links">
-                        <a href="https://nimishes-lab.vercel.app/papers/AWEF-Net.pdf" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i> PDF</a>
-                    </div>
-                </div>
-                <div class="pub-item">
-                    <span class="pub-badge b-rev">Under Review</span><br />
-                    <span class="pub-ref">[C6]</span><span class="pub-title"><a href="https://nimishes-lab.vercel.app/papers/PDGuard.pdf" target="_blank" rel="noopener">PDGuard: A CNN-BiLSTM Attention Network for Wearable IMU-Based Parkinson&rsquo;s Disease Detection</a></span>
-                    <p class="pub-meta"><span class="me">N. K. Paul</span> et al., NIMISHES Lab</p>
-                    <p class="pub-venue"><em>29th IEEE Int. Conf. on Computer and Information Technology (ICCIT)</em>, 2026</p>
-                    <p class="pub-result"><b>88.34%</b> accuracy and pooled ROC-AUC <b>0.918</b> on the PADS cohort (469 participants) under subject-disjoint folds; <b>1.24M parameters</b> at 18.3 ms per window on CPU.</p>
-                    <div class="pub-links">
-                        <a href="https://nimishes-lab.vercel.app/papers/PDGuard.pdf" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i> PDF</a>
-                    </div>
-                </div>
-                <div class="pub-item">
-                    <span class="pub-badge b-rev">Under Review</span><span class="pub-badge b-q1" title="Journal quartile ranking">Q1</span><span class="pub-badge b-q1" title="Journal Impact Factor">IF 7.7</span><br />
-                    <span class="pub-ref">[J1]</span><span class="pub-title">LCM-UNet: A Reparameterizable Local-Compensated Mamba U-Net for Skin Lesion Segmentation</span>
-                    <p class="pub-meta">M. S. I. Shovo, <span class="me">N. K. Paul</span>, and K. Morol</p>
-                    <p class="pub-venue"><em>IEEE Journal of Biomedical and Health Informatics (JBHI)</em> &middot; with ELITE Research Lab</p>
-                    <p class="pub-result">Ultra-compact state-space segmentation at <b>34,180 parameters</b> and 0.06 GFLOPs after reparameterization, improving IoU and DSC on ISIC 2017/2018 at identical inference cost.</p>
-                    <div class="pub-links">
-                        <a href="mailto:nishikantapaul108@gmail.com?subject=Manuscript%20request%20LCM-UNet"><i class="fas fa-envelope"></i> Request from authors</a>
-                    </div>
-                </div>
-                <div class="pub-item">
-                    <span class="pub-badge b-rev">Under Review</span><span class="pub-badge b-q1" title="Journal quartile ranking">Q1</span><span class="pub-badge b-q1" title="Journal Impact Factor">IF 4.2</span><br />
-                    <span class="pub-ref">[J2]</span><span class="pub-title">Anomaly-Aware ForensiBlock: Explainable Behavioral Monitoring for Digital Evidence Access</span>
-                    <p class="pub-meta">A. J. Akbarfam, <span class="me">N. K. Paul</span>, and S. Ismail</p>
-                    <p class="pub-venue"><em>IEEE Access</em> &middot; with Washington State University</p>
-                    <p class="pub-result">Real-time behavioral anomaly scoring over blockchain evidence access with asynchronous TreeSHAP explanations: <b>AUROC 0.953</b> on CERT r4.2 at <b>9.37 ms</b> mean scoring overhead.</p>
-                    <div class="pub-links">
-                        <a href="mailto:nishikantapaul108@gmail.com?subject=Manuscript%20request%20Anomaly-Aware%20ForensiBlock"><i class="fas fa-envelope"></i> Request from authors</a>
-                    </div>
-                </div>
-                <div class="pub-item">
-                    <span class="pub-badge b-rev">Under Review</span><span class="pub-badge b-q1" title="Journal quartile ranking">Q1</span><span class="pub-badge b-q1" title="Journal Impact Factor">IF 2.8</span><br />
-                    <span class="pub-ref">[J3]</span><span class="pub-title">BGD-SF PolySegNet: Boundary-Guided Dynamic Selective Fusion Network for Robust Polyp Segmentation in Colonoscopy Images</span>
-                    <p class="pub-meta"><span class="me">N. K. Paul</span>, S. Maherin, and M. Akter</p>
-                    <p class="pub-venue"><em>PLOS ONE</em></p>
-                    <p class="pub-result"><b>Dice 0.887</b> / IoU 0.839 at <b>35 FPS</b>, with <b>+15.7%</b> Boundary-F1 over the strongest CNN baselines and external validation on CVC-ClinicDB, CVC-ColonDB, ETIS-Larib, and CVC-300.</p>
-                    <div class="pub-links">
-                        <a href="mailto:nishikantapaul108@gmail.com?subject=Manuscript%20request%20BGD-SF%20PolySegNet"><i class="fas fa-envelope"></i> Request from authors</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="pub-section">
-                <h3>In Preparation</h3>
-                <p class="pub-note">Manuscripts in preparation, targeting IEEE ISBI 2027 and WACV 2027 workshops.
-                    Not circulated publicly &mdash; please
-                    <a href="mailto:nishikantapaul108@gmail.com">email me</a> and the authors will gladly share a copy on request.</p>
-                <div class="pub-item">
-                    <span class="pub-badge b-prep">In Preparation</span><br />
-                    <span class="pub-ref">[W1]</span><span class="pub-title">CoMAF-Polyp: Calibrated Reliability-Aware Fusion of Specialist and Foundation Pseudo-Labels for Semi-Supervised Polyp Segmentation</span>
-                    <p class="pub-meta"><span class="me">N. K. Paul</span>, M. S. I. Shovo, and C. Gonz&aacute;lez</p>
-                    <p class="pub-venue">Target: <em>WACV Workshop</em> &middot; with the Medical University of Vienna, Austria</p>
-                    <p class="pub-result">Semi-supervised polyp segmentation that fuses pseudo-labels from a task-specific specialist segmenter and a vision foundation model, weighting each source by calibrated reliability rather than trusting either uniformly.</p>
-                    <div class="pub-links">
-                        <a href="mailto:nishikantapaul108@gmail.com?subject=Manuscript%20request%20CoMAF-Polyp"><i class="fas fa-envelope"></i> Request from authors</a>
-                    </div>
-                </div>
-                <div class="pub-item">
-                    <span class="pub-badge b-prep">In Preparation</span><br />
-                    <span class="pub-ref">[W2]</span><span class="pub-title">APED-CXR: Adaptive Privileged Evidence Distillation for Chest X-Ray Grounding with Image-Only Inference</span>
-                    <p class="pub-meta"><span class="me">N. K. Paul</span> and J. Fayyad</p>
-                    <p class="pub-venue">Target: <em>IEEE Int. Symposium on Biomedical Imaging (ISBI 2027)</em> &middot; with the American University of Sharjah, UAE</p>
-                    <p class="pub-result">Studies whether privileged evidence available only during training, such as radiology reports, can be distilled into a chest X-ray grounding model so it localizes findings accurately from the image alone at inference, without needing that extra evidence at test time.</p>
-                    <div class="pub-links">
-                        <a href="mailto:nishikantapaul108@gmail.com?subject=Manuscript%20request%20APED-CXR"><i class="fas fa-envelope"></i> Request from authors</a>
-                    </div>
-                </div>
-                <div class="pub-item">
-                    <span class="pub-badge b-prep">In Preparation</span><br />
-                    <span class="pub-ref">[W3]</span><span class="pub-title">Coupled or Independent? Fault Coupling in Agentic Medical Vision Systems</span>
-                    <p class="pub-meta"><span class="me">N. K. Paul</span> and J. Fayyad</p>
-                    <p class="pub-venue">Target: <em>WACV 2027 &ndash; SENSE Workshop</em> &middot; with the American University of Sharjah, UAE</p>
-                    <p class="pub-result">Investigates whether failures in multi-component agentic medical vision pipelines are coupled across modules or arise independently, toward more reliable fault diagnosis and safety auditing of agentic systems deployed on medical imaging tasks.</p>
-                    <div class="pub-links">
-                        <a href="mailto:nishikantapaul108@gmail.com?subject=Manuscript%20request%20Coupled%20or%20Independent"><i class="fas fa-envelope"></i> Request from authors</a>
-                    </div>
-                </div>
-            </div>
+            <script>
+              (function () {
+                var group = document.getElementById("pub-filter");
+                if (!group) return;
+                var buttons = group.querySelectorAll("button[data-filter]");
+                var sections = document.querySelectorAll(".pub-section[data-status]");
+                function apply(filter) {
+                  Array.prototype.forEach.call(buttons, function (b) {
+                    b.setAttribute("aria-pressed", String(b.getAttribute("data-filter") === filter));
+                  });
+                  Array.prototype.forEach.call(sections, function (sec) {
+                    sec.hidden = filter !== "all" && sec.getAttribute("data-status") !== filter;
+                  });
+                }
+                Array.prototype.forEach.call(buttons, function (b) {
+                  b.addEventListener("click", function () { apply(b.getAttribute("data-filter")); });
+                });
+              })();
+            </script>
         </div>
         <!-- Footer -->
         <footer class="fixed-bottom">
