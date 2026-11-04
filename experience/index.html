@@ -281,25 +281,23 @@
                     </span>
                   </div>
                   <p class="mb-2">
-                    <strong>Project:</strong> LCM-UNet — Reparameterizable
-                    Local-Compensated Mamba U-Net &nbsp;·&nbsp; Joint First Author
+                    <strong>Project:</strong> LCM-UNet — Scale-Selective Mamba with Reparameterizable
+                    Multi-Basis Local Modeling for Lightweight Skin Lesion Segmentation &nbsp;·&nbsp; Joint First Author
                   </p>
                   <ul class="list-unstyled ml-1 mb-0">
                     <li class="mb-2">
                       <i class="fas fa-check-circle text-success mr-2"></i>
-                      Joint first-author work on LCM-UNet, a 34K-parameter
-                      Mamba-based skin lesion segmentation network; developed and
-                      evaluated the Residual Dilated Local Adapter (RDLA) for
-                      improved local boundary modeling with no additional
-                      inference-time operator after reparameterization
+                      Joint first-author work on LCM-UNet, a 33,474-parameter
+                      skin lesion segmentation network with scale-selective Mamba
+                      and multi-basis local adapters folded into the host kernel
+                      before inference
                     </li>
                     <li class="mb-2">
                       <i class="fas fa-check-circle text-success mr-2"></i>
-                      Achieved +0.48/+0.37 percentage-point IoU gains on ISIC
-                      2017/2018 and 86.37&nbsp;&plusmn;&nbsp;0.29% IoU on PH&sup2;;
-                      conducted multi-seed, boundary-sensitive, statistical, and
-                      fusion-equivalence evaluation while retaining 34,180
-                      parameters and 0.05974 GFLOPs
+                      Achieved 88.62% and 89.73% Dice on ISIC 2017 and ISIC
+                      2018, and 90.46% Dice on PH&sup2;; the adapter improved Dice
+                      by 0.48 percentage points without adding deployed parameters
+                      or operations
                     </li>
                   </ul>
                 </div>
