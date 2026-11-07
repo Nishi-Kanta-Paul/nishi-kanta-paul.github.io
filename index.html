@@ -319,10 +319,10 @@
             (Texas Tech University).
           </p>
           <p>
-            I have <b>10 papers</b>: <b>5 published or accepted</b> (IEEE
-            BECITHCON 2026, iCONEECT 2026, the MaCVi workshop at WACV 2027, IEEE
-            iCACCESS 2024), <b>4 under review</b> (IEEE ISBI 2027, the FABRIC
-            workshop at WACV 2027), and <b>1 in preparation</b>.
+            I have <b>10 papers</b>: <b>6 published or accepted</b> (IEEE
+            BECITHCON 2026, iCONEECT 2026, the MaCVi and FABRIC workshops at
+            WACV 2027, IEEE iCACCESS 2024), <b>3 under review</b> (IEEE ISBI
+            2027), and <b>1 in preparation</b>.
           </p>
           <p>
             I also work as a Software Engineer II at Brain Station 23 PLC and an
@@ -476,6 +476,22 @@
                  data-fig-paper="https://arxiv.org/abs/2610.40900"
                  data-fig-caption="The measured divergence profile sets each block&rsquo;s LoRA rank under a fixed budget. The rank-allocated encoder feeds a linear decoder, and a router selects among nested per-cluster prefixes when the profile is condition dependent.">
                 <img src="/assets/img/papers/thumb/aquaprobe.webp" width="520" height="257" loading="lazy" decoding="async" alt="Architecture diagram of AquaProbe: rank allocation, a frozen encoder with LoRA, a linear decoder, and conditioned routing." />
+                <span class="paper-fig-hint" aria-hidden="true"><i class="fas fa-expand-alt"></i></span>
+              </a>
+            </div>
+            <div class="selpub-item has-fig">
+              <div class="pub-body">
+                <span class="selpub-badge sb-acc">Accepted</span>
+                <a class="selpub-title" href="https://arxiv.org/abs/2610.40913" target="_blank" rel="noopener">Coupled or Independent? Fault Coupling in Agentic Medical Vision Systems</a>
+                <p class="selpub-venue"><em>FABRIC Workshop, IEEE/CVF WACV</em>, 2027</p>
+                <p class="selpub-result">Crop-first retrieval causes <b>55% joint wrong agreement</b> between tool and reasoning channels, capping hard-label disagreement recall at <b>0.29</b>, versus <b>0.57</b> with full-image retrieval.</p>
+              </div>
+              <a class="paper-fig" href="/assets/img/papers/coupled.webp" target="_blank" rel="noopener" aria-haspopup="dialog"
+                 aria-label="Enlarge the pipeline figure for Coupled or Independent?"
+                 data-fig-title="Coupled or Independent?" data-fig-label="System overview &middot; Figure 1"
+                 data-fig-paper="https://arxiv.org/abs/2610.40913"
+                 data-fig-caption="The perturbed image reaches the tool channel (segmentation, BiomedCLIP retrieval) and the reasoning channel (a frozen reasoner in a ReAct loop); only the pipeline order differs. Under full-image retrieval the channels disagree and the check fires; under crop-first retrieval both fail alike and the check stays silent. The retrieved tiles and predictions illustrate modal experimental outcomes, not a logged end-to-end execution.">
+                <img src="/assets/img/papers/thumb/coupled.webp" width="520" height="294" loading="lazy" decoding="async" alt="System diagram comparing full-image and crop-first retrieval in an agentic medical vision pipeline, with a disagreement check between tool and reasoning channels." />
                 <span class="paper-fig-hint" aria-hidden="true"><i class="fas fa-expand-alt"></i></span>
               </a>
             </div>

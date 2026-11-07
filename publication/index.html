@@ -11,7 +11,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Nishi Kanta Paul | Publications</title>
     <meta name="author" content="Nishi Kanta Paul" />
-    <meta name="description" content="Research publications by Nishi Kanta Paul - accepted IEEE conference papers and IEEE ISBI 2027 and WACV 2027 workshop submissions spanning EEG sleep staging, EEG-fMRI decoding, Parkinson&#39;s gait analysis, diabetic retinopathy, chest X-ray grounding and anonymization, underwater vision, and trustworthy medical AI." />
+    <meta name="description" content="Research publications by Nishi Kanta Paul - accepted IEEE conference and WACV 2027 workshop papers and IEEE ISBI 2027 submissions spanning EEG sleep staging, EEG-fMRI decoding, Parkinson&#39;s gait analysis, diabetic retinopathy, chest X-ray grounding and anonymization, underwater vision, and trustworthy medical AI." />
     <meta name="keywords" content="Nishi Kanta Paul, publications, research papers, NIMISHES Lab, SleepEffFormer, WaveFoG, DR-LiteNet, ForensiBlock, AquaProbe, APED-CXR, Band2Net, LAPIS, medical imaging, explainable AI, computer vision" />
 
     <!-- Bootstrap & MDB -->
@@ -190,8 +190,8 @@
 
             <div class="pub-filter" id="pub-filter" role="group" aria-label="Filter publications">
                 <button type="button" data-filter="all" aria-pressed="true">All <span class="pub-count">(10)</span></button>
-                <button type="button" data-filter="published" aria-pressed="false">Published &amp; Accepted <span class="pub-count">(5)</span></button>
-                <button type="button" data-filter="review" aria-pressed="false">Under Review <span class="pub-count">(4)</span></button>
+                <button type="button" data-filter="published" aria-pressed="false">Published &amp; Accepted <span class="pub-count">(6)</span></button>
+                <button type="button" data-filter="review" aria-pressed="false">Under Review <span class="pub-count">(3)</span></button>
                 <button type="button" data-filter="prep" aria-pressed="false">In Preparation <span class="pub-count">(1)</span></button>
             </div>
 
@@ -212,6 +212,22 @@
                            data-fig-paper="https://arxiv.org/abs/2610.40900"
                            data-fig-caption="The measured divergence profile sets each block&rsquo;s LoRA rank under a fixed budget. The rank-allocated encoder feeds a linear decoder, and a router selects among nested per-cluster prefixes when the profile is condition dependent.">
                             <img src="/assets/img/papers/thumb/aquaprobe.webp" width="520" height="257" loading="lazy" decoding="async" alt="Architecture diagram of AquaProbe: rank allocation, a frozen encoder with LoRA, a linear decoder, and conditioned routing." />
+                            <span class="paper-fig-hint" aria-hidden="true"><i class="fas fa-expand-alt"></i></span>
+                        </a>
+                    </div>
+                    <div class="pub-item has-fig">
+                        <div class="pub-body">
+                            <p class="pub-head"><span class="pub-tag">[WACV 2027 Workshop]</span>Coupled or Independent? Fault Coupling in Agentic Medical Vision Systems.</p>
+                            <p class="pub-authors"><span class="me">Nishi Kanta Paul</span>, Md Shihabul Islam Shovo, Md Mostafijur Rahman, Jamil Fayyad.</p>
+                            <p class="pub-venue">Workshop on Foundation AI for Biomedical Reasoning, Imaging, and Cognition (FABRIC), IEEE/CVF Winter Conference on Applications of Computer Vision (WACV) 2027</p>
+                            <p class="pub-links"><span>[<a href="https://arxiv.org/abs/2610.40913" target="_blank" rel="noopener">arXiv</a>]</span></p>
+                        </div>
+                        <a class="paper-fig" href="/assets/img/papers/coupled.webp" target="_blank" rel="noopener" aria-haspopup="dialog"
+                           aria-label="Enlarge the pipeline figure for Coupled or Independent?"
+                           data-fig-title="Coupled or Independent?" data-fig-label="System overview &middot; Figure 1"
+                           data-fig-paper="https://arxiv.org/abs/2610.40913"
+                           data-fig-caption="The perturbed image reaches the tool channel (segmentation, BiomedCLIP retrieval) and the reasoning channel (a frozen reasoner in a ReAct loop); only the pipeline order differs. Under full-image retrieval the channels disagree and the check fires; under crop-first retrieval both fail alike and the check stays silent. The retrieved tiles and predictions illustrate modal experimental outcomes, not a logged end-to-end execution.">
+                            <img src="/assets/img/papers/thumb/coupled.webp" width="520" height="294" loading="lazy" decoding="async" alt="System diagram comparing full-image and crop-first retrieval in an agentic medical vision pipeline, with a disagreement check between tool and reasoning channels." />
                             <span class="paper-fig-hint" aria-hidden="true"><i class="fas fa-expand-alt"></i></span>
                         </a>
                     </div>
@@ -273,7 +289,7 @@
 
                 <div class="pub-section" data-status="review">
                     <h3>Under Review</h3>
-                    <p class="pub-note">Submitted to IEEE ISBI 2027 and WACV 2027 workshops.</p>
+                    <p class="pub-note">Submitted to IEEE ISBI 2027.</p>
                     <div class="pub-item has-fig">
                         <div class="pub-body">
                             <p class="pub-head"><span class="pub-tag">[ISBI 2027]</span>APED-CXR: Adaptive Privileged Evidence Distillation for Chest X-Ray Grounding with Image-Only Inference.</p>
@@ -319,22 +335,6 @@
                            data-fig-paper="https://arxiv.org/abs/2610.40722"
                            data-fig-caption="(a) A semi-orthogonal basis splits the latent into a patient-identity residual and a clinical complement. (b) The decoder is trained on cross-patient residual swaps. (c) A metric loss makes the residual patient-discriminative while a spatial adversary suppresses identity in the clinical complement. The output card is schematic, not a model prediction.">
                             <img src="/assets/img/papers/thumb/lapis.webp" width="520" height="216" loading="lazy" decoding="async" alt="Architecture diagram of LAPIS: latent decomposition, replacement-aware training, and identity residual learning on chest radiographs." />
-                            <span class="paper-fig-hint" aria-hidden="true"><i class="fas fa-expand-alt"></i></span>
-                        </a>
-                    </div>
-                    <div class="pub-item has-fig">
-                        <div class="pub-body">
-                            <p class="pub-head"><span class="pub-tag">[WACV 2027 Workshop]</span>Coupled or Independent? Fault Coupling in Agentic Medical Vision Systems.</p>
-                            <p class="pub-authors"><span class="me">Nishi Kanta Paul</span>, Md Shihabul Islam Shovo, Md Mostafijur Rahman, Jamil Fayyad.</p>
-                            <p class="pub-venue">Workshop on Foundation AI for Biomedical Reasoning, Imaging, and Cognition (FABRIC), IEEE/CVF Winter Conference on Applications of Computer Vision (WACV) 2027</p>
-                            <p class="pub-links"><span>[<a href="https://arxiv.org/abs/2610.40913" target="_blank" rel="noopener">arXiv</a>]</span></p>
-                        </div>
-                        <a class="paper-fig" href="/assets/img/papers/coupled.webp" target="_blank" rel="noopener" aria-haspopup="dialog"
-                           aria-label="Enlarge the pipeline figure for Coupled or Independent?"
-                           data-fig-title="Coupled or Independent?" data-fig-label="System overview &middot; Figure 1"
-                           data-fig-paper="https://arxiv.org/abs/2610.40913"
-                           data-fig-caption="The perturbed image reaches the tool channel (segmentation, BiomedCLIP retrieval) and the reasoning channel (a frozen reasoner in a ReAct loop); only the pipeline order differs. Under full-image retrieval the channels disagree and the check fires; under crop-first retrieval both fail alike and the check stays silent. The retrieved tiles and predictions illustrate modal experimental outcomes, not a logged end-to-end execution.">
-                            <img src="/assets/img/papers/thumb/coupled.webp" width="520" height="294" loading="lazy" decoding="async" alt="System diagram comparing full-image and crop-first retrieval in an agentic medical vision pipeline, with a disagreement check between tool and reasoning channels." />
                             <span class="paper-fig-hint" aria-hidden="true"><i class="fas fa-expand-alt"></i></span>
                         </a>
                     </div>
