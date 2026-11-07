@@ -1,0 +1,206 @@
+/* Architecture figure thumbnails and popup, used by the home and publications pages. */
+
+/* Card layout: paper text on the left, figure on the right. Cards without a figure
+   skip .has-fig, so their text keeps the same left edge as every other card. */
+.has-fig {
+  --fig-w: 240px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) var(--fig-w);
+  column-gap: 1.25rem;
+  align-items: center;
+}
+.selpub-item.has-fig { --fig-w: 190px; }
+
+/* Thumbnail. The figures are drawn on white, so the tile stays white in both themes. */
+.paper-fig {
+  position: relative;
+  display: block;
+  aspect-ratio: 2 / 1;
+  padding: .3rem;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid var(--pc-border, rgba(0, 0, 0, .16));
+  border-radius: .35rem;
+  cursor: zoom-in;
+  transition: border-color .15s ease-out, box-shadow .15s ease-out;
+}
+.paper-fig img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.paper-fig-hint {
+  position: absolute;
+  right: .35rem;
+  bottom: .35rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.35rem;
+  height: 1.35rem;
+  font-size: .62rem;
+  color: #434b57;
+  background: rgba(255, 255, 255, .92);
+  border: 1px solid rgba(0, 0, 0, .18);
+  border-radius: .25rem;
+  transition: color .15s ease-out, background-color .15s ease-out, border-color .15s ease-out;
+}
+.paper-fig:hover,
+.paper-fig:focus-visible {
+  border-color: var(--global-theme-color);
+  box-shadow: 0 6px 16px -8px rgba(28, 38, 56, .35);
+}
+.paper-fig:hover .paper-fig-hint,
+.paper-fig:focus-visible .paper-fig-hint {
+  color: #fff;
+  background: var(--global-theme-color);
+  border-color: var(--global-theme-color);
+}
+.paper-fig:focus-visible {
+  outline: 2px solid var(--global-theme-color);
+  outline-offset: 2px;
+}
+
+@media (max-width: 767.98px) {
+  .has-fig {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: .8rem;
+  }
+}
+
+/* Popup. The native <dialog> spans the viewport and centres the panel, so a click
+   outside the panel lands on the dialog itself and closes it. */
+.figbox {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: 1rem;
+  overflow: hidden;
+  background: transparent;
+  border: 0;
+}
+.figbox[open] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: figbox-fade .16s ease-out;
+}
+.figbox::backdrop {
+  background: rgba(14, 17, 22, .76);
+  animation: figbox-fade .16s ease-out;
+}
+.figbox-panel {
+  width: min(1180px, 100%);
+  max-height: 100%;
+  overflow-y: auto;
+  background: var(--pc-card, #f8f9fb);
+  border-radius: .6rem;
+  box-shadow: 0 24px 60px -18px rgba(0, 0, 0, .6);
+}
+.figbox-head {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: .85rem 1.1rem;
+  background: var(--pc-card, #f8f9fb);
+  border-bottom: 1px solid var(--pc-border, rgba(0, 0, 0, .16));
+}
+.figbox-label {
+  margin: 0;
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  color: var(--pc-muted, #2e343e);
+}
+.figbox-title {
+  margin: .1rem 0 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--pc-text, #16181d);
+}
+.figbox-close {
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  padding: 0;
+  font-size: 1rem;
+  color: var(--pc-muted, #2e343e);
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid var(--pc-border, rgba(0, 0, 0, .16));
+  border-radius: .35rem;
+  transition: color .15s, border-color .15s;
+}
+.figbox-close:hover {
+  color: var(--global-theme-color);
+  border-color: var(--global-theme-color);
+}
+.figbox-close:focus-visible,
+.figbox-links a:focus-visible {
+  outline: 2px solid var(--global-theme-color);
+  outline-offset: 2px;
+}
+.figbox-stage {
+  padding: 1rem;
+  background: #fff;
+}
+.figbox-stage img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 68vh;
+  object-fit: contain;
+}
+.figbox-foot {
+  padding: .85rem 1.1rem 1rem;
+  border-top: 1px solid var(--pc-border, rgba(0, 0, 0, .16));
+}
+.figbox-caption {
+  margin: 0;
+  font-size: .9rem;
+  line-height: 1.5;
+  color: var(--pc-muted, #2e343e);
+}
+.figbox-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .2rem 1.1rem;
+  margin: .55rem 0 0;
+  font-size: .875rem;
+  font-weight: 600;
+}
+.figbox-links a {
+  color: var(--pc-link, var(--global-theme-color));
+}
+
+/* Keeps the page still behind the popup, and stops the fixed navbar jumping sideways. */
+html.figbox-lock {
+  overflow: hidden;
+  scrollbar-gutter: stable;
+}
+
+@keyframes figbox-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .paper-fig,
+  .paper-fig-hint { transition: none; }
+  .figbox[open],
+  .figbox::backdrop { animation: none; }
+}

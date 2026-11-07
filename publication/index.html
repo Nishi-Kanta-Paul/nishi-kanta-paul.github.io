@@ -11,8 +11,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Nishi Kanta Paul | Publications</title>
     <meta name="author" content="Nishi Kanta Paul" />
-    <meta name="description" content="Research publications by Nishi Kanta Paul - accepted IEEE conference papers, journal submissions to IEEE JBHI, IEEE Access, and PLOS ONE, and IEEE ISBI 2027 and WACV 2027 workshop submissions spanning EEG sleep staging, EEG-fMRI decoding, Parkinson&#39;s gait analysis, diabetic retinopathy, polyp and skin lesion segmentation, chest X-ray grounding and anonymization, underwater vision, and trustworthy medical AI." />
-    <meta name="keywords" content="Nishi Kanta Paul, publications, research papers, NIMISHES Lab, SleepEffFormer, WaveFoG, DR-LiteNet, LCM-UNet, BGD-SF PolySegNet, ForensiBlock, AquaProbe, APED-CXR, Band2Net, LAPIS, medical imaging, explainable AI, computer vision" />
+    <meta name="description" content="Research publications by Nishi Kanta Paul - accepted IEEE conference papers and IEEE ISBI 2027 and WACV 2027 workshop submissions spanning EEG sleep staging, EEG-fMRI decoding, Parkinson&#39;s gait analysis, diabetic retinopathy, chest X-ray grounding and anonymization, underwater vision, and trustworthy medical AI." />
+    <meta name="keywords" content="Nishi Kanta Paul, publications, research papers, NIMISHES Lab, SleepEffFormer, WaveFoG, DR-LiteNet, ForensiBlock, AquaProbe, APED-CXR, Band2Net, LAPIS, medical imaging, explainable AI, computer vision" />
 
     <!-- Bootstrap & MDB -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -38,6 +38,7 @@
         href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚛️</text></svg>" />
 
     <link rel="stylesheet" href="/assets/css/main.css" />
+    <link rel="stylesheet" href="/assets/css/paper-figures.css" />
 
     <style>
       /* Local palette: the site's --global-card-bg-color equals its page background (#fff)
@@ -183,44 +184,84 @@
                 Peer-reviewed and in-progress research across medical imaging, biosignal modelling, efficient deep
                 learning, and trustworthy AI &mdash; developed at <a href="https://nimishes-lab.vercel.app/"
                 target="_blank" rel="noopener">NIMISHES Lab</a> and with collaborators at
-                Washington State University, Texas Tech University, the University of South Florida, the
-                American University of Sharjah, and ELITE Research Lab.
+                Washington State University, Texas Tech University, the University of South Florida, and the
+                American University of Sharjah.
             </p>
 
             <div class="pub-filter" id="pub-filter" role="group" aria-label="Filter publications">
-                <button type="button" data-filter="all" aria-pressed="true">All <span class="pub-count">(12)</span></button>
+                <button type="button" data-filter="all" aria-pressed="true">All <span class="pub-count">(10)</span></button>
                 <button type="button" data-filter="published" aria-pressed="false">Published &amp; Accepted <span class="pub-count">(5)</span></button>
-                <button type="button" data-filter="review" aria-pressed="false">Under Review <span class="pub-count">(7)</span></button>
-                <!-- <button type="button" data-filter="prep" aria-pressed="false">In Preparation <span class="pub-count">(1)</span></button> -->
+                <button type="button" data-filter="review" aria-pressed="false">Under Review <span class="pub-count">(4)</span></button>
+                <button type="button" data-filter="prep" aria-pressed="false">In Preparation <span class="pub-count">(1)</span></button>
             </div>
 
             <div class="pub-list">
                 <div class="pub-section" data-status="published">
                     <h3>Published &amp; Accepted</h3>
                     <p class="pub-note">Published and accepted conference and workshop papers, newest first.</p>
-                    <div class="pub-item">
-                        <p class="pub-head"><span class="pub-tag">[WACV 2027 Workshop]</span>AquaProbe: Efficient Adaptation of Frozen Vision Models for Underwater Images.</p>
-                        <p class="pub-authors">Md Shihabul Islam Shovo, <span class="me">Nishi Kanta Paul</span>, Trung Dong, Xiaomin Lin.</p>
-                        <p class="pub-venue">5th Workshop on Maritime Computer Vision (MaCVi), IEEE/CVF Winter Conference on Applications of Computer Vision (WACV) 2027</p>
-                        <p class="pub-links"><span>[<a href="https://arxiv.org/abs/2610.40900" target="_blank" rel="noopener">arXiv</a>]</span></p>
+                    <div class="pub-item has-fig">
+                        <div class="pub-body">
+                            <p class="pub-head"><span class="pub-tag">[WACV 2027 Workshop]</span>AquaProbe: Efficient Adaptation of Frozen Vision Models for Underwater Images.</p>
+                            <p class="pub-authors">Md Shihabul Islam Shovo, <span class="me">Nishi Kanta Paul</span>, Trung Dong, Xiaomin Lin.</p>
+                            <p class="pub-venue">5th Workshop on Maritime Computer Vision (MaCVi), IEEE/CVF Winter Conference on Applications of Computer Vision (WACV) 2027</p>
+                            <p class="pub-links"><span>[<a href="https://arxiv.org/abs/2610.40900" target="_blank" rel="noopener">arXiv</a>]</span></p>
+                        </div>
+                        <a class="paper-fig" href="/assets/img/papers/aquaprobe.webp" target="_blank" rel="noopener" aria-haspopup="dialog"
+                           aria-label="Enlarge the AquaProbe architecture figure"
+                           data-fig-title="AquaProbe" data-fig-label="Model architecture &middot; Figure 2"
+                           data-fig-paper="https://arxiv.org/abs/2610.40900"
+                           data-fig-caption="The measured divergence profile sets each block&rsquo;s LoRA rank under a fixed budget. The rank-allocated encoder feeds a linear decoder, and a router selects among nested per-cluster prefixes when the profile is condition dependent.">
+                            <img src="/assets/img/papers/thumb/aquaprobe.webp" width="520" height="257" loading="lazy" decoding="async" alt="Architecture diagram of AquaProbe: rank allocation, a frozen encoder with LoRA, a linear decoder, and conditioned routing." />
+                            <span class="paper-fig-hint" aria-hidden="true"><i class="fas fa-expand-alt"></i></span>
+                        </a>
                     </div>
-                    <div class="pub-item">
-                        <p class="pub-head"><span class="pub-tag">[BECITHCON 2026]</span>SleepEffFormer: Efficient CNN-Transformer with Transition-Aware Smoothing for Single-Channel EEG Sleep Stage Classification.</p>
-                        <p class="pub-authors"><span class="me">Nishi Kanta Paul</span>, Md Shihabul Islam Shovo, Israt Jerin Esha, Adrita Rahman.</p>
-                        <p class="pub-venue">Proceedings of the 5th IEEE International Conference on Biomedical Engineering, Computer and Information Technology for Health (BECITHCON), Dhaka, Bangladesh, 2026</p>
-                        <p class="pub-links"><span>[<a href="https://nimishes-lab.vercel.app/papers/SleepEffFormer.pdf" target="_blank" rel="noopener">Paper</a>]</span> <span>[<a href="https://arxiv.org/abs/2609.22148" target="_blank" rel="noopener">arXiv</a>]</span> <span>[<a href="https://github.com/Nishi-Kanta-Paul/SleepStage" target="_blank" rel="noopener">Code</a>]</span></p>
+                    <div class="pub-item has-fig">
+                        <div class="pub-body">
+                            <p class="pub-head"><span class="pub-tag">[BECITHCON 2026]</span>SleepEffFormer: Efficient CNN-Transformer with Transition-Aware Smoothing for Single-Channel EEG Sleep Stage Classification.</p>
+                            <p class="pub-authors"><span class="me">Nishi Kanta Paul</span>, Md Shihabul Islam Shovo, Israt Jerin Esha, Adrita Rahman.</p>
+                            <p class="pub-venue">Proceedings of the 5th IEEE International Conference on Biomedical Engineering, Computer and Information Technology for Health (BECITHCON), Dhaka, Bangladesh, 2026</p>
+                            <p class="pub-links"><span>[<a href="https://nimishes-lab.vercel.app/papers/SleepEffFormer.pdf" target="_blank" rel="noopener">Paper</a>]</span> <span>[<a href="https://arxiv.org/abs/2609.22148" target="_blank" rel="noopener">arXiv</a>]</span> <span>[<a href="https://github.com/Nishi-Kanta-Paul/SleepStage" target="_blank" rel="noopener">Code</a>]</span></p>
+                        </div>
+                        <a class="paper-fig" href="/assets/img/papers/sleepeffformer.webp" target="_blank" rel="noopener" aria-haspopup="dialog"
+                           aria-label="Enlarge the SleepEffFormer architecture figure"
+                           data-fig-title="SleepEffFormer" data-fig-label="Model architecture &middot; Figure 1"
+                           data-fig-paper="https://arxiv.org/abs/2609.22148"
+                           data-fig-caption="(a) End-to-end pipeline from raw epoch to hypnogram. (b) CNN tokeniser with per-block output shapes. (c) Pre-LN encoder block; the residual path bypasses each normalised sublayer. Dashed purple marks attention-based saliency.">
+                            <img src="/assets/img/papers/thumb/sleepeffformer.webp" width="520" height="168" loading="lazy" decoding="async" alt="Architecture diagram of SleepEffFormer: preprocessing, a 1D CNN tokeniser, Transformer encoder blocks, and transition-aware smoothing." />
+                            <span class="paper-fig-hint" aria-hidden="true"><i class="fas fa-expand-alt"></i></span>
+                        </a>
                     </div>
-                    <div class="pub-item">
-                        <p class="pub-head"><span class="pub-tag">[BECITHCON 2026]</span>WaveFoG: Wavelet Gated Transformer for Parkinson&rsquo;s Freezing of Gait Detection Using Wearable Accelerometer Signals.</p>
-                        <p class="pub-authors">Md Shihabul Islam Shovo, <span class="me">Nishi Kanta Paul</span>, Adrita Rahman, Israt Jerin Esha.</p>
-                        <p class="pub-venue">Proceedings of the 5th IEEE International Conference on Biomedical Engineering, Computer and Information Technology for Health (BECITHCON), Dhaka, Bangladesh, 2026</p>
-                        <p class="pub-links"><span>[<a href="https://nimishes-lab.vercel.app/papers/WaveFoG.pdf" target="_blank" rel="noopener">Paper</a>]</span> <span>[<a href="https://arxiv.org/abs/2609.22147" target="_blank" rel="noopener">arXiv</a>]</span> <span>[<a href="https://github.com/Shihabul-Shuvo/WaveFoG" target="_blank" rel="noopener">Code</a>]</span></p>
+                    <div class="pub-item has-fig">
+                        <div class="pub-body">
+                            <p class="pub-head"><span class="pub-tag">[BECITHCON 2026]</span>WaveFoG: Wavelet Gated Transformer for Parkinson&rsquo;s Freezing of Gait Detection Using Wearable Accelerometer Signals.</p>
+                            <p class="pub-authors">Md Shihabul Islam Shovo, <span class="me">Nishi Kanta Paul</span>, Adrita Rahman, Israt Jerin Esha.</p>
+                            <p class="pub-venue">Proceedings of the 5th IEEE International Conference on Biomedical Engineering, Computer and Information Technology for Health (BECITHCON), Dhaka, Bangladesh, 2026</p>
+                            <p class="pub-links"><span>[<a href="https://nimishes-lab.vercel.app/papers/WaveFoG.pdf" target="_blank" rel="noopener">Paper</a>]</span> <span>[<a href="https://arxiv.org/abs/2609.22147" target="_blank" rel="noopener">arXiv</a>]</span> <span>[<a href="https://github.com/Shihabul-Shuvo/WaveFoG" target="_blank" rel="noopener">Code</a>]</span></p>
+                        </div>
+                        <a class="paper-fig" href="/assets/img/papers/wavefog.webp" target="_blank" rel="noopener" aria-haspopup="dialog"
+                           aria-label="Enlarge the WaveFoG architecture figure"
+                           data-fig-title="WaveFoG" data-fig-label="Model architecture &middot; Figure 1"
+                           data-fig-paper="https://arxiv.org/abs/2609.22147"
+                           data-fig-caption="Three parallel branches encode the input window. The Wavelet Gate (dashed purple) soft-interpolates between the concatenated encoder representation and a wavelet projection, and a two-layer MLP outputs the FoG probability.">
+                            <img src="/assets/img/papers/thumb/wavefog.webp" width="520" height="144" loading="lazy" decoding="async" alt="Architecture diagram of WaveFoG: 1D CNN, Transformer and DWT branches combined through a wavelet gate into an MLP classifier." />
+                            <span class="paper-fig-hint" aria-hidden="true"><i class="fas fa-expand-alt"></i></span>
+                        </a>
                     </div>
-                    <div class="pub-item">
-                        <p class="pub-head"><span class="pub-tag">[iCONEECT 2026]</span>DR-LiteNet: A Lightweight Explainable Hybrid CNN Framework for Imbalanced Diabetic Retinopathy Grading via Adaptive SMOTE Fusion.</p>
-                        <p class="pub-authors"><span class="me">Nishi Kanta Paul</span>, Md Shihabul Islam Shovo, Audrija Chowdhury, Israt Jahan Esha.</p>
-                        <p class="pub-venue">Proceedings of the 1st International Conference on Next-Generation Electrical &amp; Electronics, Computer Systems, and Technologies (iCONEECT), Chittagong, Bangladesh, 2026</p>
-                        <p class="pub-links"><span>[<a href="https://nimishes-lab.vercel.app/papers/DR-LiteNet.pdf" target="_blank" rel="noopener">Paper</a>]</span> <span>[<a href="https://arxiv.org/abs/2611.04405" target="_blank" rel="noopener">arXiv</a>]</span> <span>[<a href="https://github.com/Nishi-Kanta-Paul/DR-LiteNet" target="_blank" rel="noopener">Code</a>]</span></p>
+                    <div class="pub-item has-fig">
+                        <div class="pub-body">
+                            <p class="pub-head"><span class="pub-tag">[iCONEECT 2026]</span>DR-LiteNet: A Lightweight Explainable Hybrid CNN Framework for Imbalanced Diabetic Retinopathy Grading via Adaptive SMOTE Fusion.</p>
+                            <p class="pub-authors"><span class="me">Nishi Kanta Paul</span>, Md Shihabul Islam Shovo, Audrija Chowdhury, Israt Jahan Esha.</p>
+                            <p class="pub-venue">Proceedings of the 1st International Conference on Next-Generation Electrical &amp; Electronics, Computer Systems, and Technologies (iCONEECT), Chittagong, Bangladesh, 2026</p>
+                            <p class="pub-links"><span>[<a href="https://nimishes-lab.vercel.app/papers/DR-LiteNet.pdf" target="_blank" rel="noopener">Paper</a>]</span> <span>[<a href="https://arxiv.org/abs/2611.04405" target="_blank" rel="noopener">arXiv</a>]</span> <span>[<a href="https://github.com/Nishi-Kanta-Paul/DR-LiteNet" target="_blank" rel="noopener">Code</a>]</span></p>
+                        </div>
+                        <a class="paper-fig" href="/assets/img/papers/dr-litenet.webp" target="_blank" rel="noopener" aria-haspopup="dialog"
+                           aria-label="Enlarge the DR-LiteNet architecture figure"
+                           data-fig-title="DR-LiteNet" data-fig-label="Model architecture &middot; Figure 1"
+                           data-fig-paper="https://arxiv.org/abs/2611.04405"
+                           data-fig-caption="The CNN branch (EfficientNetB0 + GAP) yields 1,280-d deep features and the handcrafted branch yields 51-d lesion descriptors, concatenated into a 1,331-d hybrid vector. ADASYN oversampling applies during training only; Grad-CAM maps derive from EfficientNetB0&rsquo;s last convolutional block.">
+                            <img src="/assets/img/papers/thumb/dr-litenet.webp" width="520" height="225" loading="lazy" decoding="async" alt="Architecture diagram of DR-LiteNet: preprocessing, CNN and handcrafted feature branches, feature fusion, and a classification head with five output grades." />
+                            <span class="paper-fig-hint" aria-hidden="true"><i class="fas fa-expand-alt"></i></span>
+                        </a>
                     </div>
                     <div class="pub-item">
                         <p class="pub-head"><span class="pub-tag">[iCACCESS 2024]</span>Video-based Driver Distraction Detection using Transfer Learning: Bangladesh Perspective.</p>
@@ -232,63 +273,91 @@
 
                 <div class="pub-section" data-status="review">
                     <h3>Under Review</h3>
-                    <p class="pub-note">Submitted to peer-reviewed journals, IEEE ISBI 2027, and WACV 2027 workshops.</p>
-                    <div class="pub-item">
-                        <p class="pub-head"><span class="pub-tag">[IEEE JBHI]</span><span class="pub-metric" title="Journal quartile ranking">Q1</span><span class="pub-metric" title="Journal Impact Factor">IF 7.7</span>LCM-UNet: Scale-Selective Mamba with Reparameterizable Multi-Basis Local Modeling for Lightweight Skin Lesion Segmentation.</p>
-                        <p class="pub-authors">Md Shihabul Islam Shovo, <span class="me">Nishi Kanta Paul</span>, Dip Kumar Saha, Kishor Morol.</p>
-                        <p class="pub-venue">IEEE Journal of Biomedical and Health Informatics</p>
-                        <p class="pub-links"><span>[<a href="https://arxiv.org/abs/2611.04409" target="_blank" rel="noopener">arXiv</a>]</span></p>
+                    <p class="pub-note">Submitted to IEEE ISBI 2027 and WACV 2027 workshops.</p>
+                    <div class="pub-item has-fig">
+                        <div class="pub-body">
+                            <p class="pub-head"><span class="pub-tag">[ISBI 2027]</span>APED-CXR: Adaptive Privileged Evidence Distillation for Chest X-Ray Grounding with Image-Only Inference.</p>
+                            <p class="pub-authors">Md Shihabul Islam Shovo, <span class="me">Nishi Kanta Paul</span>, Jamil Fayyad.</p>
+                            <p class="pub-venue">IEEE International Symposium on Biomedical Imaging (ISBI) 2027</p>
+                            <p class="pub-links"><span>[<a href="https://arxiv.org/abs/2610.29740" target="_blank" rel="noopener">arXiv</a>]</span></p>
+                        </div>
+                        <a class="paper-fig" href="/assets/img/papers/aped-cxr.webp" target="_blank" rel="noopener" aria-haspopup="dialog"
+                           aria-label="Enlarge the APED-CXR architecture figure"
+                           data-fig-title="APED-CXR" data-fig-label="Model overview &middot; Figure 1"
+                           data-fig-paper="https://arxiv.org/abs/2610.29740"
+                           data-fig-caption="The student predicts disease probabilities and boxes from evidence maps using the image alone. In training, a frozen teacher verifies proposals, and its support scores supervise the student&rsquo;s box-pooled scores. Maps and boxes are schematic.">
+                            <img src="/assets/img/papers/thumb/aped-cxr.webp" width="520" height="242" loading="lazy" decoding="async" alt="Overview diagram of APED-CXR: a compact student predicting from a chest X-ray alone, and a frozen multimodal teacher verifying proposals during training." />
+                            <span class="paper-fig-hint" aria-hidden="true"><i class="fas fa-expand-alt"></i></span>
+                        </a>
                     </div>
-                    <div class="pub-item">
-                        <p class="pub-head"><span class="pub-tag">[IEEE Access]</span><span class="pub-metric" title="Journal quartile ranking">Q1</span><span class="pub-metric" title="Journal Impact Factor">IF 4.2</span>Anomaly-Aware ForensiBlock: Explainable Behavioral Monitoring for Digital Evidence Access.</p>
-                        <p class="pub-authors">Asma Jodeiri Akbarfam, <span class="me">Nishi Kanta Paul</span>, Shereen Ismail.</p>
-                        <p class="pub-venue">IEEE Access</p>
-                        <p class="pub-links"><span>[<a href="mailto:nishikantapaul108@gmail.com?subject=Manuscript%20request%3A%20Anomaly-Aware%20ForensiBlock">Request PDF</a>]</span></p>
+                    <div class="pub-item has-fig">
+                        <div class="pub-body">
+                            <p class="pub-head"><span class="pub-tag">[ISBI 2027]</span>Band2Net: Frequency-to-Network Transport Distillation for fMRI-Privileged, EEG-Only Session-Condition Decoding.</p>
+                            <p class="pub-authors"><span class="me">Nishi Kanta Paul</span>, Md Shihabul Islam Shovo, Dwarikanath Mahapatra.</p>
+                            <p class="pub-venue">IEEE International Symposium on Biomedical Imaging (ISBI) 2027</p>
+                            <p class="pub-links"><span>[<a href="https://arxiv.org/abs/2611.01548" target="_blank" rel="noopener">arXiv</a>]</span></p>
+                        </div>
+                        <a class="paper-fig" href="/assets/img/papers/band2net.webp" target="_blank" rel="noopener" aria-haspopup="dialog"
+                           aria-label="Enlarge the Band2Net architecture figure"
+                           data-fig-title="Band2Net" data-fig-label="Model architecture &middot; Figure 1"
+                           data-fig-paper="https://arxiv.org/abs/2611.01548"
+                           data-fig-caption="Five band-wise EEG connectivity graphs and seven canonical fMRI network tokens are matched by a balanced transport plan computed per paired observation. The transported targets supervise the EEG student through a stop-gradient, and the frozen fMRI branch is discarded at inference.">
+                            <img src="/assets/img/papers/thumb/band2net.webp" width="520" height="253" loading="lazy" decoding="async" alt="Architecture diagram of Band2Net: an fMRI teacher, a frequency-to-network transport module, and an EEG student deployed at inference." />
+                            <span class="paper-fig-hint" aria-hidden="true"><i class="fas fa-expand-alt"></i></span>
+                        </a>
                     </div>
-                    <div class="pub-item">
-                        <p class="pub-head"><span class="pub-tag">[PLOS ONE]</span><span class="pub-metric" title="Journal quartile ranking">Q1</span><span class="pub-metric" title="Journal Impact Factor">IF 2.8</span>BGD-SF PolySegNet: Boundary-Guided Dynamic Selective Fusion Network for Robust Polyp Segmentation in Colonoscopy Images.</p>
-                        <p class="pub-authors"><span class="me">Nishi Kanta Paul</span>, Shamia Maherin, Morsheda Akter, Moinul Hossain, Md Kishor Morol.</p>
-                        <p class="pub-venue">PLOS ONE</p>
-                        <p class="pub-links"><span>[<a href="https://arxiv.org/abs/2611.02603" target="_blank" rel="noopener">arXiv</a>]</span></p>
+                    <div class="pub-item has-fig">
+                        <div class="pub-body">
+                            <p class="pub-head"><span class="pub-tag">[ISBI 2027]</span>LAPIS: Clinically Constrained Patient-Identity Residual Learning for Chest X-Ray Anonymization.</p>
+                            <p class="pub-authors"><span class="me">Nishi Kanta Paul</span>, Md Shihabul Islam Shovo, D&eacute;sir&eacute; Sidib&eacute;.</p>
+                            <p class="pub-venue">IEEE International Symposium on Biomedical Imaging (ISBI) 2027</p>
+                            <p class="pub-links"><span>[<a href="https://arxiv.org/abs/2610.40722" target="_blank" rel="noopener">arXiv</a>]</span></p>
+                        </div>
+                        <a class="paper-fig" href="/assets/img/papers/lapis.webp" target="_blank" rel="noopener" aria-haspopup="dialog"
+                           aria-label="Enlarge the LAPIS architecture figure"
+                           data-fig-title="LAPIS" data-fig-label="Model architecture &middot; Figure 1"
+                           data-fig-paper="https://arxiv.org/abs/2610.40722"
+                           data-fig-caption="(a) A semi-orthogonal basis splits the latent into a patient-identity residual and a clinical complement. (b) The decoder is trained on cross-patient residual swaps. (c) A metric loss makes the residual patient-discriminative while a spatial adversary suppresses identity in the clinical complement. The output card is schematic, not a model prediction.">
+                            <img src="/assets/img/papers/thumb/lapis.webp" width="520" height="216" loading="lazy" decoding="async" alt="Architecture diagram of LAPIS: latent decomposition, replacement-aware training, and identity residual learning on chest radiographs." />
+                            <span class="paper-fig-hint" aria-hidden="true"><i class="fas fa-expand-alt"></i></span>
+                        </a>
                     </div>
-                    <div class="pub-item">
-                        <p class="pub-head"><span class="pub-tag">[ISBI 2027]</span>APED-CXR: Adaptive Privileged Evidence Distillation for Chest X-Ray Grounding with Image-Only Inference.</p>
-                        <p class="pub-authors">Md Shihabul Islam Shovo, <span class="me">Nishi Kanta Paul</span>, Jamil Fayyad.</p>
-                        <p class="pub-venue">IEEE International Symposium on Biomedical Imaging (ISBI) 2027</p>
-                        <p class="pub-links"><span>[<a href="https://arxiv.org/abs/2610.29740" target="_blank" rel="noopener">arXiv</a>]</span></p>
-                    </div>
-                    <div class="pub-item">
-                        <p class="pub-head"><span class="pub-tag">[ISBI 2027]</span>Band2Net: Frequency-to-Network Transport Distillation for fMRI-Privileged, EEG-Only Session-Condition Decoding.</p>
-                        <p class="pub-authors"><span class="me">Nishi Kanta Paul</span>, Md Shihabul Islam Shovo, Dwarikanath Mahapatra.</p>
-                        <p class="pub-venue">IEEE International Symposium on Biomedical Imaging (ISBI) 2027</p>
-                        <p class="pub-links"><span>[<a href="https://arxiv.org/abs/2611.01548" target="_blank" rel="noopener">arXiv</a>]</span></p>
-                    </div>
-                    <div class="pub-item">
-                        <p class="pub-head"><span class="pub-tag">[ISBI 2027]</span>LAPIS: Clinically Constrained Patient-Identity Residual Learning for Chest X-Ray Anonymization.</p>
-                        <p class="pub-authors"><span class="me">Nishi Kanta Paul</span>, Md Shihabul Islam Shovo, D&eacute;sir&eacute; Sidib&eacute;.</p>
-                        <p class="pub-venue">IEEE International Symposium on Biomedical Imaging (ISBI) 2027</p>
-                        <p class="pub-links"><span>[<a href="https://arxiv.org/abs/2610.40722" target="_blank" rel="noopener">arXiv</a>]</span></p>
-                    </div>
-                    <div class="pub-item">
-                        <p class="pub-head"><span class="pub-tag">[WACV 2027 Workshop]</span>Coupled or Independent? Fault Coupling in Agentic Medical Vision Systems.</p>
-                        <p class="pub-authors"><span class="me">Nishi Kanta Paul</span>, Md Shihabul Islam Shovo, Md Mostafijur Rahman, Jamil Fayyad.</p>
-                        <p class="pub-venue">Workshop on Foundation AI for Biomedical Reasoning, Imaging, and Cognition (FABRIC), IEEE/CVF Winter Conference on Applications of Computer Vision (WACV) 2027</p>
-                        <p class="pub-links"><span>[<a href="https://arxiv.org/abs/2610.40913" target="_blank" rel="noopener">arXiv</a>]</span></p>
+                    <div class="pub-item has-fig">
+                        <div class="pub-body">
+                            <p class="pub-head"><span class="pub-tag">[WACV 2027 Workshop]</span>Coupled or Independent? Fault Coupling in Agentic Medical Vision Systems.</p>
+                            <p class="pub-authors"><span class="me">Nishi Kanta Paul</span>, Md Shihabul Islam Shovo, Md Mostafijur Rahman, Jamil Fayyad.</p>
+                            <p class="pub-venue">Workshop on Foundation AI for Biomedical Reasoning, Imaging, and Cognition (FABRIC), IEEE/CVF Winter Conference on Applications of Computer Vision (WACV) 2027</p>
+                            <p class="pub-links"><span>[<a href="https://arxiv.org/abs/2610.40913" target="_blank" rel="noopener">arXiv</a>]</span></p>
+                        </div>
+                        <a class="paper-fig" href="/assets/img/papers/coupled.webp" target="_blank" rel="noopener" aria-haspopup="dialog"
+                           aria-label="Enlarge the pipeline figure for Coupled or Independent?"
+                           data-fig-title="Coupled or Independent?" data-fig-label="System overview &middot; Figure 1"
+                           data-fig-paper="https://arxiv.org/abs/2610.40913"
+                           data-fig-caption="The perturbed image reaches the tool channel (segmentation, BiomedCLIP retrieval) and the reasoning channel (a frozen reasoner in a ReAct loop); only the pipeline order differs. Under full-image retrieval the channels disagree and the check fires; under crop-first retrieval both fail alike and the check stays silent. The retrieved tiles and predictions illustrate modal experimental outcomes, not a logged end-to-end execution.">
+                            <img src="/assets/img/papers/thumb/coupled.webp" width="520" height="294" loading="lazy" decoding="async" alt="System diagram comparing full-image and crop-first retrieval in an agentic medical vision pipeline, with a disagreement check between tool and reasoning channels." />
+                            <span class="paper-fig-hint" aria-hidden="true"><i class="fas fa-expand-alt"></i></span>
+                        </a>
                     </div>
                 </div>
 
-                <!--
                 <div class="pub-section" data-status="prep">
                     <h3>In Preparation</h3>
-                    <p class="pub-note">Manuscript in preparation for MIDL 2027.</p>
+                    <p class="pub-note">Manuscript in preparation.</p>
+                    <div class="pub-item">
+                        <p class="pub-head"><span class="pub-tag">[IEEE Access]</span>Anomaly-Aware ForensiBlock: Explainable Behavioral Monitoring for Digital Evidence Access.</p>
+                        <p class="pub-authors">Asma Jodeiri Akbarfam, <span class="me">Nishi Kanta Paul</span>, Shereen Ismail.</p>
+                        <p class="pub-venue">Target venue: IEEE Access</p>
+                        <p class="pub-links"><span>[<a href="mailto:nishikantapaul108@gmail.com?subject=Manuscript%20request%3A%20Anomaly-Aware%20ForensiBlock">Request PDF</a>]</span></p>
+                    </div>
+                    <!--
                     <div class="pub-item">
                         <p class="pub-head"><span class="pub-tag">[MIDL 2027]</span>CoMAF-Polyp: Calibrated Reliability-Aware Fusion of Specialist and Foundation Pseudo-Labels for Semi-Supervised Polyp Segmentation.</p>
                         <p class="pub-authors"><span class="me">Nishi Kanta Paul</span>, Md Shihabul Islam Shovo, Camila Gonz&aacute;lez.</p>
                         <p class="pub-venue">Target venue: Medical Imaging with Deep Learning (MIDL) 2027</p>
                         <p class="pub-links"><span>[<a href="mailto:nishikantapaul108@gmail.com?subject=Manuscript%20request%3A%20CoMAF-Polyp">Request PDF</a>]</span></p>
                     </div>
+                    -->
                 </div>
-                -->
 
                 <p class="pub-footnote">Manuscripts without a public preprint are not distributed publicly &mdash;
                     please <a href="mailto:nishikantapaul108@gmail.com">email me</a> and the authors will gladly share a copy on request.</p>
@@ -362,6 +431,7 @@
         <script defer type="text/javascript" id="MathJax-script"
             src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
         <script defer src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script defer src="/assets/js/paper-figures.js"></script>
 </body>
 
 </html>
