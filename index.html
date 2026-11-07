@@ -114,6 +114,14 @@
       /* Bootstrap's .text-dark pinned these to #343a40, which is unreadable in dark mode;
          the companion `dark:text-white` is Tailwind syntax and has no effect here. */
       .news-cell { color: var(--global-text-color); }
+      .news-toggle { display: inline-flex; align-items: center; gap: .35rem; padding: 0; font-size: .85rem; font-weight: 600;
+                     color: var(--global-theme-color); background: none; border: 0; cursor: pointer; }
+      .news-toggle span { color: inherit; }
+      .news-toggle:hover { text-decoration: underline; }
+      .news-toggle:focus-visible { outline: 2px solid var(--global-theme-color); outline-offset: 2px; border-radius: .2rem; }
+      .news-toggle i { font-size: .62rem; transition: transform .15s ease-out; }
+      .news-toggle[aria-expanded="true"] i { transform: rotate(180deg); }
+      @media (prefers-reduced-motion: reduce) { .news-toggle i { transition: none; } }
     </style>
 
     <link rel="canonical" href="https://Nishi-Kanta-Paul.github.io/" />
@@ -285,73 +293,55 @@
         <div class="col-md-8 col-lg-9">
           <h3>Greetings!</h3>
           <p>
-            I’m <b>Nishi Kanta Paul</b>, a Computer Science graduate from
-            <b
-              >Ahsanullah University of Science and Technology (Top 7 in
-              class)</b
-            >, passionate about <b>AI</b>, <b>computer vision</b>, and
-            <b>large language models (LLMs)</b> for <b>healthcare</b> and
-            <b>intelligent systems</b>.
-          </p>
-          <p>
-            I work as a <b>Software Engineer II at Brain Station 23 PLC</b>
-            (promoted in September 2026) and
-            as an <b>Adjunct Lecturer at International Standard University</b>,
-            teaching <b>Robotics, IoT</b>, and <b>Algorithms</b>.
-          </p>
-          <p>
-            I am the <b>Founder &amp; Research Lead</b> of
+            I’m <b>Nishi Kanta Paul</b>, a medical AI researcher developing
+            <b>efficient, explainable deep learning</b> for
+            <b>medical imaging</b> and <b>biosignals</b>. I am the
+            <b>Founder &amp; Research Lead</b> of
             <a href="https://nimishes-lab.vercel.app/" target="_blank"
               ><b>NIMISHES Lab</b></a
-            >, an independent research lab advancing AI-driven medical
-            imaging and intelligent healthcare systems, and a
-            <b>Remote Research Assistant at Washington State University</b>, working on
-            anomaly-aware forensic authentication under Prof. Asma Jodeiri
-            Akbarfam. My research spans EEG sleep staging, EEG&ndash;fMRI
-            decoding, wearable signal modelling for Parkinson’s disease,
-            diabetic retinopathy grading, polyp and skin lesion segmentation,
-            chest X-ray grounding and anonymization, and explainable forensic
-            AI. I also collaborate
-            with
+            >
+            and a
+            <b>Remote Research Assistant at Washington State University</b>
+            under Prof. Asma Jodeiri Akbarfam.
+          </p>
+          <p>
+            My research spans EEG sleep staging, EEG&ndash;fMRI decoding,
+            wearable signal modelling for Parkinson’s disease, diabetic
+            retinopathy grading, chest X-ray grounding and anonymization, and
+            explainable forensic AI, with collaborators including
             <a href="https://jfayyad.com" target="_blank"
               ><b>Dr. Jamil Fayyad</b></a
-            >, Assistant Professor at the American University of Sharjah, on
-            trustworthy vision-language systems for chest X-ray grounding, and
-            with him and
+            >
+            (American University of Sharjah) and
             <a href="https://mostafij-rahman.github.io/" target="_blank"
               ><b>Dr. Md Mostafijur Rahman</b></a
-            >, Assistant Professor at Texas Tech University, on agentic medical
-            vision pipelines. I am lead or
-            co-author on <b>9 manuscripts</b>:
-            <b>4 accepted</b> at <b>IEEE BECITHCON 2026</b>,
-            <b>iCONEECT 2026</b>, and the <b>MaCVi workshop at WACV 2027</b>,
-            <b>4 under review</b> at <b>IEEE ISBI 2027</b> and the
-            <b>FABRIC workshop at WACV 2027</b>, and <b>1 in preparation</b>. My
-            work on driver distraction detection has been
-            <b>published internationally</b>.
-          </p>
-          <p>
-            With
-            <b>3000+ solved problems on Codeforces, LeetCode, and CodeChef</b>,
-            I bring strong <b>algorithmic</b> and <b>problem-solving skills</b>.
-            I focus on <b>medical AI</b>, <b>clinical NLP</b>,
-            <b>intelligent chatbots</b>, and <b>LLM-driven systems</b>.
-          </p>
-          <p>
-            I’m
-            <b
-              >always open to research or software collaborations—feel free to
-              reach out!</b
             >
+            (Texas Tech University).
           </p>
-          <p>Contact: <b>nishikantapaul108@gmail.com</b></p>
+          <p>
+            I have <b>10 papers</b>: <b>5 published or accepted</b> (IEEE
+            BECITHCON 2026, iCONEECT 2026, the MaCVi workshop at WACV 2027, IEEE
+            iCACCESS 2024), <b>4 under review</b> (IEEE ISBI 2027, the FABRIC
+            workshop at WACV 2027), and <b>1 in preparation</b>.
+          </p>
+          <p>
+            I also work as a Software Engineer II at Brain Station 23 PLC and an
+            Adjunct Lecturer at International Standard University, and graduated
+            from Ahsanullah University of Science and Technology (Top 7 in
+            class).
+          </p>
+          <p>
+            <b>Open to research collaborations:</b>
+            nishikantapaul108@gmail.com
+          </p>
 
           <!-- News Section -->
           <h4 class="mt-5">
             Recent News <span role="img" aria-label="lightning">⚡</span>
           </h4>
           <div class="table-responsive news">
-            <table class="table table-sm table-borderless">
+            <table class="table table-sm table-borderless mb-1">
+              <tbody>
               <tr>
                 <th scope="row" class="news-cell">
                   September 2026
@@ -380,6 +370,8 @@
                   supervised by Prof. Asma Jodeiri Akbarfam.
                 </td>
               </tr>
+              </tbody>
+              <tbody id="news-more" hidden>
               <tr>
                 <th scope="row" class="news-cell">
                   April 2026
@@ -446,49 +438,44 @@
                   as a Software Engineer-I.
                 </td>
               </tr>
+              </tbody>
             </table>
           </div>
+          <button type="button" class="news-toggle" id="news-toggle" aria-expanded="false" aria-controls="news-more">
+            <span>More</span> <i class="fas fa-chevron-down" aria-hidden="true"></i>
+          </button>
+          <script>
+            (function () {
+              var toggle = document.getElementById("news-toggle");
+              var more = document.getElementById("news-more");
+              var label = toggle.querySelector("span");
+              toggle.addEventListener("click", function () {
+                var opening = more.hidden;
+                more.hidden = !opening;
+                toggle.setAttribute("aria-expanded", String(opening));
+                label.textContent = opening ? "Less" : "More";
+              });
+            })();
+          </script>
 
           <!-- Selected Publications -->
           <h4 class="mt-5">
             Selected Publications <span role="img" aria-label="page">📄</span>
           </h4>
           <div class="selpub">
-            <div class="selpub-item">
-              <span class="selpub-badge sb-pub">Published</span>
-              <a class="selpub-title" href="https://ieeexplore.ieee.org/document/10499531" target="_blank" rel="noopener">Video-based Driver Distraction Detection using Transfer Learning: Bangladesh Perspective</a>
-              <p class="selpub-venue"><em>IEEE iCACCESS</em>, 2024 &middot; IEEE Xplore</p>
-              <p class="selpub-result">Transfer-learning driver distraction recognition evaluated on Bangladeshi road conditions.</p>
-            </div>
             <div class="selpub-item has-fig">
               <div class="pub-body">
                 <span class="selpub-badge sb-acc">Accepted</span>
-                <a class="selpub-title" href="https://nimishes-lab.vercel.app/papers/SleepEffFormer.pdf" target="_blank" rel="noopener">SleepEffFormer: Efficient CNN-Transformer with Transition-Aware Smoothing for Single-Channel EEG Sleep Stage Classification</a>
-                <p class="selpub-venue"><em>IEEE BECITHCON</em>, 2026 &middot; first author</p>
-                <p class="selpub-result"><b>83.9%</b> accuracy and <b>78.9%</b> macro-F1 on Sleep-EDF Expanded with <b>3&ndash;5&times; fewer parameters</b> than comparable models.</p>
+                <a class="selpub-title" href="https://arxiv.org/abs/2610.40900" target="_blank" rel="noopener">AquaProbe: Efficient Adaptation of Frozen Vision Models for Underwater Images</a>
+                <p class="selpub-venue"><em>MaCVi Workshop, IEEE/CVF WACV</em>, 2027</p>
+                <p class="selpub-result"><b>70.1 mIoU</b> with proportional LoRA rank allocation, <b>1.9 points above</b> uniform allocation at the same <b>0.59M</b> adapter-parameter budget.</p>
               </div>
-              <a class="paper-fig" href="/assets/img/papers/sleepeffformer.webp" target="_blank" rel="noopener" aria-haspopup="dialog"
-                 aria-label="Enlarge the SleepEffFormer architecture figure"
-                 data-fig-title="SleepEffFormer" data-fig-label="Model architecture &middot; Figure 1"
-                 data-fig-paper="https://arxiv.org/abs/2609.22148"
-                 data-fig-caption="(a) End-to-end pipeline from raw epoch to hypnogram. (b) CNN tokeniser with per-block output shapes. (c) Pre-LN encoder block; the residual path bypasses each normalised sublayer. Dashed purple marks attention-based saliency.">
-                <img src="/assets/img/papers/thumb/sleepeffformer.webp" width="520" height="168" loading="lazy" decoding="async" alt="Architecture diagram of SleepEffFormer: preprocessing, a 1D CNN tokeniser, Transformer encoder blocks, and transition-aware smoothing." />
-                <span class="paper-fig-hint" aria-hidden="true"><i class="fas fa-expand-alt"></i></span>
-              </a>
-            </div>
-            <div class="selpub-item has-fig">
-              <div class="pub-body">
-                <span class="selpub-badge sb-acc">Accepted</span>
-                <a class="selpub-title" href="https://arxiv.org/abs/2611.04405" target="_blank" rel="noopener">DR-LiteNet: A Lightweight Explainable Hybrid CNN Framework for Imbalanced Diabetic Retinopathy Grading via Adaptive SMOTE Fusion</a>
-                <p class="selpub-venue"><em>iCONEECT</em>, 2026 &middot; first author</p>
-                <p class="selpub-result"><b>QWK 0.884</b> on APTOS 2019 with <b>4.69M parameters</b>, outperforming ResNet50 at a fifth of the size.</p>
-              </div>
-              <a class="paper-fig" href="/assets/img/papers/dr-litenet.webp" target="_blank" rel="noopener" aria-haspopup="dialog"
-                 aria-label="Enlarge the DR-LiteNet architecture figure"
-                 data-fig-title="DR-LiteNet" data-fig-label="Model architecture &middot; Figure 1"
-                 data-fig-paper="https://arxiv.org/abs/2611.04405"
-                 data-fig-caption="The CNN branch (EfficientNetB0 + GAP) yields 1,280-d deep features and the handcrafted branch yields 51-d lesion descriptors, concatenated into a 1,331-d hybrid vector. ADASYN oversampling applies during training only; Grad-CAM maps derive from EfficientNetB0&rsquo;s last convolutional block.">
-                <img src="/assets/img/papers/thumb/dr-litenet.webp" width="520" height="225" loading="lazy" decoding="async" alt="Architecture diagram of DR-LiteNet: preprocessing, CNN and handcrafted feature branches, feature fusion, and a classification head with five output grades." />
+              <a class="paper-fig" href="/assets/img/papers/aquaprobe.webp" target="_blank" rel="noopener" aria-haspopup="dialog"
+                 aria-label="Enlarge the AquaProbe architecture figure"
+                 data-fig-title="AquaProbe" data-fig-label="Model architecture &middot; Figure 2"
+                 data-fig-paper="https://arxiv.org/abs/2610.40900"
+                 data-fig-caption="The measured divergence profile sets each block&rsquo;s LoRA rank under a fixed budget. The rank-allocated encoder feeds a linear decoder, and a router selects among nested per-cluster prefixes when the profile is condition dependent.">
+                <img src="/assets/img/papers/thumb/aquaprobe.webp" width="520" height="257" loading="lazy" decoding="async" alt="Architecture diagram of AquaProbe: rank allocation, a frozen encoder with LoRA, a linear decoder, and conditioned routing." />
                 <span class="paper-fig-hint" aria-hidden="true"><i class="fas fa-expand-alt"></i></span>
               </a>
             </div>
